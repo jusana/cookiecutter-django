@@ -1,0 +1,14 @@
+{% raw %}{% extends "../base.html" %}
+
+{% block content %}
+<div class="container">
+  <h3>Paramétrer les cookies</h3>
+  <p>Lorsque vous naviguez sur le site des cookies sont déposés sur votre navigateur.</p>
+  <p>Pour certains d’entre eux, votre consentement est nécessaire. Cliquez sur chaque catégorie de cookies pour activer ou désactiver leur utilisation. Pour bénéficier de l’ensemble des fonctionnalités proposées par le site (partage d’articles sur les réseaux sociaux, amélioration du site grâce aux statistiques de navigation, etc.), il est conseillé de garder l’activation des différentes catégories de cookies.
+  </p>
+  {% for cookie_group in object_list  %}
+    {% include "cookie_consent/include/_cookie_group.html" %}
+  {% endfor %}
+</div>
+{% endblock %}
+{% endraw %}

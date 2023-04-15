@@ -1,0 +1,73 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run current file in python env",
+      "type": "shell",
+      "command": "docker compose -f local.yml run --rm django ./manage.py shell -c 'exec(open(\"/app/${relativeFile}\").read())'",
+      // "command": "docker compose -f local.yml run --rm django python manage.py runscript /app/${relativeFile}",
+      "options": {
+        "statusbar": {
+          "color": "#22d68b",
+          "label": "$(play) run this file"
+        }
+      }
+    },
+    {
+      "label": "runserver",
+      "type": "shell",
+      // on récycle le enterypoint docker
+      "command": "/entrypoint /start",
+      "options": {
+        "statusbar": {
+          "color": "#22C1D6",
+          "label": "$(ports-open-browser-icon) runserver"
+        }
+      }
+    },
+    {
+      "label": "docker rebuild prod",
+      "type": "shell",
+      "command": "docker compose -f production_with_media_files.yml build",
+      "options": {
+        "statusbar": {
+          "color": "#0b7280",
+          "label": "$(extensions) docker rebuild prod"
+        }
+      }
+    },
+    {
+      "label": "docker makemigrations Django",
+      "type": "shell",
+      "command": "docker compose -f local.yml run --rm django python manage.py makemigrations",
+      "options": {
+        "statusbar": {
+          "color": "#d6bb22",
+          "label": "$(database) docker makemigrations"
+        }
+      }
+    },
+    {
+      "label": "docker migrate Django",
+      "type": "shell",
+      "command": "docker compose -f local.yml run --rm django python manage.py migrate",
+      "options": {
+        "statusbar": {
+          "color": "#ee0034"
+        }
+      }
+    },
+    {
+      "label": "docker purge Queue",
+      "type": "shell",
+      "command": "docker compose -f local.yml run --rm django celery -A config.celery_app purge",
+      "options": {
+        "statusbar": {
+          "color": "#ee009f"
+        }
+      }
+    }
+  ]
+}

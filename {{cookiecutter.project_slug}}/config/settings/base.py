@@ -25,7 +25,7 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # In Windows, this must be set to your system time zone.
 TIME_ZONE = "{{ cookiecutter.timezone }}"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr-FR"
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
@@ -69,6 +69,8 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
+    "admin_interface",
+    "colorfield",
     "django.contrib.admin",
     "django.forms",
 ]
@@ -87,6 +89,21 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_spectacular",
 {%- endif %}
+    # consentement cookies
+    # on utilise une conf adhoc pour gérer l'histoire du BigAutoField pour django 3.2
+    # "cookie_consent",
+    "config.third_party_apps.CookieConsentConf",
+    "django_htmx",
+    # CMS
+    "mptt",
+    "taggit",
+    # attention il semble que le package manque des migrations
+    "pages",
+    # 'sorl.thumbnail',
+    "ckeditor",
+    "ckeditor_uploader",
+    "haystack",
+    "django_json_widget",
 {%- if cookiecutter.frontend_pipeline == 'Webpack' %}
     "webpack_loader",
 {%- endif %}
@@ -153,6 +170,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -200,7 +218,13 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
+                "pages.context_processors.media",
             ],
+            # permet d'ajouter des templatetags custom hors du dossier classique "templatetags"
+            # https://docs.djangoproject.com/fr/3.2/topics/templates/#module-django.template.backends.django
+            "libraries": {
+                "third_party_tags": "config.third_party_tags",
+            },
         },
     }
 ]
@@ -224,7 +248,8 @@ SESSION_COOKIE_HTTPONLY = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-httponly
 CSRF_COOKIE_HTTPONLY = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#x-frame-options
-X_FRAME_OPTIONS = "DENY"
+# X_FRAME_OPTIONS = "DENY"
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 # EMAIL
 # ------------------------------------------------------------------------------
@@ -375,3 +400,56 @@ WEBPACK_LOADER = {
 {%- endif %}
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+# This is defined here as a do-nothing function because we can't import
+# django.utils.translation -- that module depends on the settings.
+gettext_noop = lambda s: s  # noqa
+
+PAGE_LANGUAGES = (
+    ("fr", gettext_noop("Français")),
+    ("en", gettext_noop("English")),
+    #    ('de', gettext_noop('Deutsch')),
+)
+
+LANGUAGE_CODE = "fr"
+PAGE_DEFAULT_LANGUAGE = "fr"
+LANGUAGES = list(PAGE_LANGUAGES)
+
+PAGE_DEFAULT_LANGUAGE = "fr"
+PAGE_USE_LANGUAGE_PREFIX = True
+PAGE_HIDE_ROOT_SLUG = True
+PAGE_TAGGING = True
+
+PAGE_DEFAULT_TEMPLATE = "pages/monobloc.html"
+PAGE_TEMPLATES = (
+    ("pages/monobloc.html", "Mono bloc"),
+    ("pages/categorie.html", "catégorie"),
+)
+
+CKEDITOR_UPLOAD_PATH = "pages-cms/"
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+
+COOKIE_CONSENT_NAME = "{{cookiecutter.project_slug}}_cookie_consent"
+COOKIE_CONSENT_MAX_AGE = 60 * 60 * 24 * 365 * 1  # 1 year
+
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+#     },
+# }
+
+# à activer une fois la conf solr générée
+# python ./manage.py build_solr_schema --filename config/solr-configset/conf/schema.xml
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.solr_backend.SolrEngine",
+        "URL": "http://solr:8983/solr/{{cookiecutter.project_slug}}-index",
+        "ADMIN_URL": "http://solr:8983/solr/admin/cores"
+        # ,'EXCLUDED_INDEXES': ['thirdpartyapp.search_indexes.BarIndex']
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+

@@ -1,0 +1,24 @@
+{% raw %}{% load i18n %}
+
+{% comment %} on utilise ici htmx pour rafraichir le captcha, on cible la div du form et on la swap avec la même div {% endcomment %}
+{% comment %} on pourrait utiliser un partial pour récupérer que la div donc pas besoin de hx-select {% endcomment %}
+{% comment %} on pourrait aussi utiliser la view "captcha-refresh" pour juster récupérer le nécessaire (clé cachée et img) {% endcomment %}
+
+{% spaceless %}
+  <div class="d-flex justify-content-center">
+    {% if audio %}
+        <a title="{% trans "Play CAPTCHA as audio file" %}" href="{{ audio }}">
+    {% endif %}
+    <img src="{{ image }}" alt="captcha" class="captcha me-1" />
+    {% if audio %}</a>{% endif %}
+      <button type="button" class="btn btn-light fw-bold me-1"
+        hx-get="{% url 'contact-form' %}"
+        hx-trigger="click"
+        hx-target="#div_id_captcha"
+        hx-select="#div_id_captcha"
+        hx-swap="outerHTML"
+    >&orarr;</button>
+  {% include "django/forms/widgets/multiwidget.html" %}
+  </div>
+{% endspaceless %}
+{% endraw %}

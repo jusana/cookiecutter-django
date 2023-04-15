@@ -1,0 +1,10 @@
+{% raw %}{% extends 'pages/base_www.html' %}
+{% load static %}
+{% load pages_tags third_party_tags %}
+
+{% block content %}
+<div class="container">
+{% ckeditoruploader_placeholder "monobloc" with ckeditor %}
+</div>
+{% endblock %}
+{% endraw %}

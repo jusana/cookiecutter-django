@@ -3,6 +3,7 @@ version: '3'
 volumes:
   {{ cookiecutter.project_slug }}_local_postgres_data: {}
   {{ cookiecutter.project_slug }}_local_postgres_data_backups: {}
+  {{ cookiecutter.project_slug }}_local_solr-core-config: {}
 
 services:
   django:{% if cookiecutter.use_celery == 'y' %} &django{% endif %}
@@ -21,6 +22,7 @@ services:
       {%- endif %}
     volumes:
       - .:/app:z
+      - {{ cookiecutter.project_slug }}_local_solr-core-config:/app/config/solr-configset
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
@@ -39,6 +41,36 @@ services:
       - {{ cookiecutter.project_slug }}_local_postgres_data_backups:/backups
     env_file:
       - ./.envs/.local/.postgres
+
+  pgadmin:
+    image: dpage/pgadmin4:6
+    container_name: {{ cookiecutter.project_slug }}_local_pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "user@domain.com"
+      PGADMIN_DEFAULT_PASSWORD: "SuperSecret"
+      PGADMIN_CONFIG_LOGIN_BANNER: "'PGAdmin de dev !!'"
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
+    depends_on:
+      - postgres
+    ports:
+      - "8888:80"
+
+  # à activer une fois solr schema généré
+  # solr:
+  #   image: solr:9
+  #   container_name: {{ cookiecutter.project_slug }}_local_solr
+  #   ports:
+  #     - "8983:8983"
+  #   restart: always
+  #   # environment:
+  #   #   SOLR_JAVA_MEM: "-Xms4g -Xmx4g"
+  #   #   SOLR_OPTS: "-XX:-UseLargePages"
+  #   volumes:
+  #     - {{ cookiecutter.project_slug }}_local_solr-core-config:/opt/solr/server/solr/configsets/solr-configset:ro
+  #   command:
+  #     - solr-precreate
+  #     - {{ cookiecutter.project_slug }}-index
+  #     - /opt/solr/server/solr/configsets/solr-configset
 
   docs:
     image: {{ cookiecutter.project_slug }}_local_docs

@@ -19,8 +19,10 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("{{ cookiecutter.project_slug }}.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
+    path("mon-compte/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("cookies/", include("cookie_consent.urls")),
+    path("ckeditor/", include("ckeditor_uploader.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 {%- if cookiecutter.use_async == 'y' %}
 if settings.DEBUG:

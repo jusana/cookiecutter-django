@@ -1,0 +1,20 @@
+{% raw %}{% load i18n %}
+<div class="bg-light d-flex justify-content-around">
+<span>
+  <a href="#">A propos</a>
+</span>
+<span>
+    <a href="{# url 'contact-form' #}">Contact</a>
+</span>
+<span>
+    <a href="https://twitter.com/XXXX" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+</span>
+<span>
+    <a href="#">CGU</a>
+</span>
+<span>
+    <a href="{% url 'cookie_consent_cookie_group_list' %}">Gestion des cookies</a>
+</span>
+        <p class="text-muted small mb-4 mb-lg-0">&copy; jusana - 2020-2020-{% now "Y" %}</p>
+</div>
+{% endraw %}

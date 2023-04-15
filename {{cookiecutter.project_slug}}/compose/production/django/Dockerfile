@@ -37,7 +37,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential \
   # psycopg2 dependencies
-  libpq-dev
+  libpq-dev \
+  # git pour version gittée de django-cms
+  git
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements .
@@ -118,6 +120,9 @@ COPY --chown=django:django . ${APP_HOME}
 
 # make django owner of the WORKDIR directory as well.
 RUN chown django:django ${APP_HOME}
+
+# volume pour media
+RUN mkdir ${APP_HOME}/mediafiles && chown django:django ${APP_HOME}/mediafiles
 
 USER django
 

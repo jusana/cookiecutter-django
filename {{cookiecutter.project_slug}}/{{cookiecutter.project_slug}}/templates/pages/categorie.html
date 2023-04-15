@@ -1,0 +1,14 @@
+{% raw %}{% extends 'pages/base_www.html' %}
+{% load static %}
+{% load pages_tags ckeditor_placeholder %}
+
+{% block content %}
+<div class="container">
+<h3>{{ current_page.title }}</h3>
+<ul>
+{% pages_sub_menu current_page %}
+</ul>
+
+</div>
+{% endblock %}
+{% endraw %}

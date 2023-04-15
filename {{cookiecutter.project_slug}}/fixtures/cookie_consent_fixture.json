@@ -1,0 +1,89 @@
+[
+  {
+    "model": "cookie_consent.cookiegroup",
+    "pk": 1,
+    "fields": {
+      "varname": "required",
+      "name": "Cookies de fonctionnement (obligatoire)",
+      "description": "Ces cookies garantissent le bon fonctionnement du site. Le site ne peut pas fonctionner correctement sans ces cookies.",
+      "is_required": true,
+      "is_deletable": false,
+      "created": "2020-03-01",
+      "ordering": 0
+    }
+  },
+  {
+    "model": "cookie_consent.cookiegroup",
+    "pk": 2,
+    "fields": {
+      "varname": "analytics",
+      "name": "Cookies analytics",
+      "description": "Ces cookies permettent d’obtenir des statistiques de fréquentation anonymes du site.",
+      "is_required": false,
+      "is_deletable": true,
+      "created": "2020-03-01T00:00:00",
+      "ordering": 0
+    }
+  },
+  {
+    "model": "cookie_consent.cookiegroup",
+    "pk": 3,
+    "fields": {
+      "varname": "social",
+      "name": "Cookies sociaux",
+      "description": "Ces cookies permettent d’interagir depuis le site avec les modules sociaux et de partager les contenus du site avec d’autres personnes ou de les informer de votre consultation ou opinion sur celui-ci, lorsque vous cliquez sur les modules \"Partager\", \"Aimer\" de Facebook et de Twitter, par exemple. En désactivant ces cookies, vous ne pourrez plus partager les articles du site sur les réseaux sociaux.",
+      "is_required": false,
+      "is_deletable": true,
+      "created": "2020-03-01T00:00:00",
+      "ordering": 0
+    }
+  },
+  {
+    "model": "cookie_consent.cookie",
+    "pk": 1,
+    "fields": {
+      "cookiegroup": 1,
+      "created": "2020-03-01T00:00:00",
+      "name": "snake_sessionid",
+      "description": "cookie de session",
+      "path": "/",
+      "domain": ""
+    }
+  },
+  {
+    "model": "cookie_consent.cookie",
+    "pk": 2,
+    "fields": {
+      "cookiegroup": 1,
+      "created": "2020-03-01T00:00:00",
+      "name": "csrftoken",
+      "description": "cookie CSRF",
+      "path": "/",
+      "domain": ""
+    }
+  },
+  {
+    "model": "cookie_consent.cookie",
+    "pk": 3,
+    "fields": {
+      "cookiegroup": 2,
+      "created": "2020-03-01T00:00:00",
+      "name": "*",
+      "description": "Cookie Matomo",
+      "path": "/",
+      "domain": ".matomo.com"
+    }
+  },
+  {
+    "model": "cookie_consent.cookie",
+    "pk": 4,
+    "fields": {
+      "cookiegroup": 3,
+      "created": "2020-03-01T00:00:00",
+      "name": "*",
+      "description": "Ces cookies sont utilisés pour partager du contenu sur Twitter",
+      "path": "/",
+      "domain": ".twitter.com"
+    }
+  }
+]

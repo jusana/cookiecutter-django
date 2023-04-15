@@ -101,3 +101,11 @@ WEBPACK_LOADER["DEFAULT"]["CACHE"] = not DEBUG  # noqa: F405
 {%- endif %}
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# important pour ne pas migrer "pages" qui est une app externe susceptible d'etre modifiée par son auteur
+# https://docs.djangoproject.com/fr/3.2/ref/settings/#migration-modules
+# A retirer pour la premiere migration
+MIGRATION_MODULES = {"sites": "{{ cookiecutter.project_slug }}.contrib.sites.migrations", "pages": None}
+
+# https://github.com/cookiecutter/cookiecutter-django/discussions/4185
+RUNSERVERPLUS_POLLER_RELOADER_TYPE = "stat"
