@@ -1,5 +1,5 @@
 cookiecutter==2.1.1
-sh==2.0.3; sys_platform != "win32"
+sh==2.0.4; sys_platform != "win32"
 binaryornot==0.4.4
 
 # Code quality
@@ -14,7 +14,7 @@ pre-commit==3.3.1
 # ------------------------------------------------------------------------------
 tox==4.5.1
 pytest==7.3.1
-pytest-xdist==3.2.1
+pytest-xdist==3.3.0
 pytest-cookies==0.7.0
 pytest-instafail==0.5.0
 pyyaml==6.0
