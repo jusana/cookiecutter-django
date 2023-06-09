@@ -25,7 +25,7 @@ RUN npm run build
 
 {%- endif %}
 # define an alias for the specific python version used in this file.
-FROM python:3.11.3-slim-bullseye as python
+FROM python:3.11.4-slim-bullseye as python
 
 # Python build stage
 FROM python as python-build-stage
@@ -125,5 +125,9 @@ RUN chown django:django ${APP_HOME}
 RUN mkdir ${APP_HOME}/mediafiles && chown django:django ${APP_HOME}/mediafiles
 
 USER django
+
+RUN DATABASE_URL="" \
+  DJANGO_SETTINGS_MODULE="config.settings.test" \
+  python manage.py compilemessages
 
 ENTRYPOINT ["/entrypoint"]
