@@ -127,6 +127,9 @@ RUN mkdir ${APP_HOME}/mediafiles && chown django:django ${APP_HOME}/mediafiles
 USER django
 
 RUN DATABASE_URL="" \
+  {%- if cookiecutter.use_celery == "y" %}
+  CELERY_BROKER_URL="" \
+  {%- endif %}
   DJANGO_SETTINGS_MODULE="config.settings.test" \
   python manage.py compilemessages
 

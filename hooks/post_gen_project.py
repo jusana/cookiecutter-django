@@ -74,12 +74,13 @@ def remove_pycharm_files():
 
 
 def remove_docker_files():
+    shutil.rmtree(".devcontainer")
     shutil.rmtree("compose")
 
     file_names = ["local.yml", "production.yml", ".dockerignore"]
     for file_name in file_names:
         os.remove(file_name)
-    if "{{ cookiecutter.use_pycharm }}".lower() == "y":
+    if "{{ cookiecutter.editor }}" == "PyCharm":
         file_names = ["docker_compose_up_django.xml", "docker_compose_up_docs.xml"]
         for file_name in file_names:
             os.remove(os.path.join(".idea", "runConfigurations", file_name))
@@ -235,6 +236,10 @@ def remove_dotgitlabciyml_file():
 
 def remove_dotgithub_folder():
     shutil.rmtree(".github")
+
+
+def remove_dotdrone_file():
+    os.remove(".drone.yml")
 
 
 def generate_random_string(length, using_digits=False, using_ascii_letters=False, using_punctuation=False):
@@ -427,7 +432,7 @@ def main():
     if "{{ cookiecutter.username_type }}" == "username":
         remove_custom_user_manager_files()
 
-    if "{{ cookiecutter.use_pycharm }}".lower() == "n":
+    if "{{ cookiecutter.editor }}" != "PyCharm":
         remove_pycharm_files()
 
     if "{{ cookiecutter.use_docker }}".lower() == "y":
@@ -445,8 +450,8 @@ def main():
         if "{{ cookiecutter.keep_local_envs_in_vcs }}".lower() == "y":
             print(
                 INFO + ".env(s) are only utilized when Docker Compose and/or "
-                "Heroku support is enabled so keeping them does not "
-                "make sense given your current setup." + TERMINATOR
+                "Heroku support is enabled so keeping them does not make sense "
+                "given your current setup." + TERMINATOR
             )
         remove_envs_and_associated_files()
     else:
@@ -489,6 +494,9 @@ def main():
 
     if "{{ cookiecutter.ci_tool }}" != "Github":
         remove_dotgithub_folder()
+
+    if "{{ cookiecutter.ci_tool }}" != "Drone":
+        remove_dotdrone_file()
 
     if "{{ cookiecutter.use_drf }}".lower() == "n":
         remove_drf_starter_files()

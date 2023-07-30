@@ -1,7 +1,11 @@
-{% raw %}{% load static i18n cookie_consent_tags {% endraw %}
-{%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}compress
-{%- endif %}{% raw %}%}{% endraw %}
-{%- if cookiecutter.frontend_pipeline == 'Webpack' %}{% raw %}{% load render_bundle from webpack_loader %}{% endraw %}
+{% raw %}
+{% load static i18n {% endraw %}
+
+{%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}compress{%- endif %}{% raw %}%}{% endraw %}
+  {%- if cookiecutter.frontend_pipeline == 'Webpack' %}{% raw %}
+    {% load render_bundle from webpack_loader %}
+
+  {% endraw %}
 {%- endif %}{% raw %}<!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}"  class="h-100">
@@ -150,10 +154,12 @@
     Script tags with only code, no src (defer by default). To run
     with a "defer" so that you run inline code:
     <script>
-      window.addEventListener('DOMContentLoaded', () => {/* Run whatever you want */});
+      window.addEventListener('DOMContentLoaded', () => {
+        /* Run whatever you want */
+      });
     </script>
     {% endcomment %}
-    {% endblock inline_javascript %}
-  </body>
+  {% endblock inline_javascript %}
+</body>
 </html>
 {%- endraw %}
