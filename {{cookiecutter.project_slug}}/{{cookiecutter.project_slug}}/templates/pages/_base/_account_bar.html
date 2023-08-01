@@ -12,14 +12,11 @@
       {% if user.is_staff %}
       <li><a class="dropdown-item" href="{% url THEME_ADMIN_URL|default:"admin:index" %}"><i class="fa fa-cog"></i> {% trans "Admin" %}</a></li>
       {% endif %}
-      {% if user.metacat_god_mode %}
-      <li><a class="dropdown-item" href="//portal/oauth?action=start&target={{ request.scheme }}%3A%2F%2F{{ request.META.HTTP_HOST }}{{request.path}}"><i class="fas fa-bomb text-danger"></i> PROD</a></li>
-      {% endif %}
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" id="account_logout" data-bs-toggle="modal" data-bs-target="#logoutModal" href="{% url "account_logout" %}">{% translate "Log out" %}</a></li>
     </ul>
 {% else %}
-    <a id="log-in-link" class="nav-link" href="">{% translate "Sign In" %}</a>
+    <a id="log-in-link" class="nav-link" href="{% url "account_login" %}">{% translate "Sign In" %}</a>
 {% endif %}
 
 
