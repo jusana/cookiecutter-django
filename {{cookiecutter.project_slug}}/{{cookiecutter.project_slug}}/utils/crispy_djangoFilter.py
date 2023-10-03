@@ -1,5 +1,5 @@
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div, Layout, Submit
+from crispy_forms.layout import Div, Layout, Submit, HTML
 from django_filters import FilterSet
 
 
@@ -30,6 +30,11 @@ class CrispyFilterSet(FilterSet):
         helper = FormHelper()
         helper.form_method = "GET"
         helper.form_id = "search-metacat-docs-form"
+        # juste pour envoyer en htmx ;)  ... optionnel  
+        # https://htmx.org/attributes/hx-boost/
+        # https://noumenal.es/notes/til/htmx/progressively-enhance-a-form/
+        # https://enzircle.hashnode.dev/responsive-table-with-django-and-htmx
+        helper.attrs = {'hx_boost': 'true', 'hx_trigger':"change"}
 
         # fields['archived'].initial = False
 
@@ -38,6 +43,8 @@ class CrispyFilterSet(FilterSet):
             # Reset('reset button', 'Effacer!'),
         ]
         helper.layout = Layout(
+            # HTML('<div class="spinner-border htmx-indicator" role="status"><span class="visually-hidden">Loading...</span></div>'),
+            HTML('<div class="progress"><div class="indeterminate"></div></div>'),
             Div(
                 *fields,
                 css_class="d-flex flex-row justify-content-between align-items-center"
