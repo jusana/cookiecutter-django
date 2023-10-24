@@ -3,6 +3,46 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2023.10.23
+
+
+### Updated
+
+- Update pylint-django to 2.5.5 ([#4638](https://github.com/cookiecutter/cookiecutter-django/pull/4638))
+
+## 2023.10.19
+
+
+### Updated
+
+- Update mypy to 1.6.1 ([#4634](https://github.com/cookiecutter/cookiecutter-django/pull/4634))
+
+- Update djangorestframework-stubs to 3.14.4 ([#4637](https://github.com/cookiecutter/cookiecutter-django/pull/4637))
+
+- Update django-stubs to 4.2.5 ([#4636](https://github.com/cookiecutter/cookiecutter-django/pull/4636))
+
+## 2023.10.17
+
+
+### Updated
+
+- Auto-update pre-commit hooks ([#4633](https://github.com/cookiecutter/cookiecutter-django/pull/4633))
+
+- Update black to 23.10.0 ([#4632](https://github.com/cookiecutter/cookiecutter-django/pull/4632))
+
+- Update pillow to 10.1.0 ([#4630](https://github.com/cookiecutter/cookiecutter-django/pull/4630))
+
+- Update django-crispy-forms to 2.1 ([#4629](https://github.com/cookiecutter/cookiecutter-django/pull/4629))
+
+## 2023.10.13
+
+
+### Updated
+
+- Update pre-commit to 3.5.0 ([#4628](https://github.com/cookiecutter/cookiecutter-django/pull/4628))
+
+- Update watchfiles to 0.21.0 ([#4627](https://github.com/cookiecutter/cookiecutter-django/pull/4627))
+
 ## 2023.10.12
 
 
