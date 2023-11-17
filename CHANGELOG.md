@@ -3,6 +3,51 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2023.11.14
+
+
+### Updated
+
+- Update sentry-sdk to 1.35.0 ([#4681](https://github.com/cookiecutter/cookiecutter-django/pull/4681))
+
+- Auto-update pre-commit hooks ([#4683](https://github.com/cookiecutter/cookiecutter-django/pull/4683))
+
+## 2023.11.11
+
+
+### Updated
+
+- Update celery to 5.3.5 ([#4678](https://github.com/cookiecutter/cookiecutter-django/pull/4678))
+
+## 2023.11.09
+
+
+### Updated
+
+- Auto-update pre-commit hooks ([#4673](https://github.com/cookiecutter/cookiecutter-django/pull/4673))
+
+- Update black to 23.11.0 ([#4674](https://github.com/cookiecutter/cookiecutter-django/pull/4674))
+
+## 2023.11.08
+
+
+### Updated
+
+- Update pytest-django to 4.7.0 ([#4672](https://github.com/cookiecutter/cookiecutter-django/pull/4672))
+
+## 2023.11.06
+
+
+### Changed
+
+- Add `rmbackup` script to remove backups from `postgres/backups`. Fixes: #4663 ([#4664](https://github.com/cookiecutter/cookiecutter-django/pull/4664))
+
+### Updated
+
+- Update django-allauth to 0.58.2 ([#4667](https://github.com/cookiecutter/cookiecutter-django/pull/4667))
+
+- Update uvicorn to 0.24.0.post1 ([#4666](https://github.com/cookiecutter/cookiecutter-django/pull/4666))
+
 ## 2023.11.04
 
 
