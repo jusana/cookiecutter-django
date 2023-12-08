@@ -3,6 +3,73 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2023.12.07
+
+
+### Updated
+
+- Bump actions/setup-python from 4 to 5 ([#4723](https://github.com/cookiecutter/cookiecutter-django/pull/4723))
+
+- Auto-update pre-commit hooks ([#4709](https://github.com/cookiecutter/cookiecutter-django/pull/4709))
+
+- Bump traefik from 2.10.6 to 2.10.7 ([#4722](https://github.com/cookiecutter/cookiecutter-django/pull/4722))
+
+## 2023.12.06
+
+
+### Updated
+
+- Bump python from 3.11.6 to 3.11.7 ([#4719](https://github.com/cookiecutter/cookiecutter-django/pull/4719))
+
+- Update mypy to 1.7.1, django-stubs to 4.2.7 and djangorestframework-stubs to 3.14.5 ([#4694](https://github.com/cookiecutter/cookiecutter-django/pull/4694))
+
+## 2023.12.04
+
+
+### Updated
+
+- Update django to 4.2.8 ([#4713](https://github.com/cookiecutter/cookiecutter-django/pull/4713))
+
+- Bump node from 18 to 20 ([#4283](https://github.com/cookiecutter/cookiecutter-django/pull/4283))
+
+- Update psycopg to 3.1.14 ([#4711](https://github.com/cookiecutter/cookiecutter-django/pull/4711))
+
+## 2023.12.02
+
+
+### Updated
+
+-  Update mailpit to latest ([#4710](https://github.com/cookiecutter/cookiecutter-django/pull/4710))
+
+## 2023.11.30
+
+
+### Fixed
+
+- Removed tmp mount in devcontainer.json. Fix #4686 ([#4708](https://github.com/cookiecutter/cookiecutter-django/pull/4708))
+
+### Updated
+
+- Bump traefik from 2.10.5 to 2.10.6 ([#4706](https://github.com/cookiecutter/cookiecutter-django/pull/4706))
+
+## 2023.11.29
+
+
+### Updated
+
+- Update sentry-sdk to 1.38.0 ([#4705](https://github.com/cookiecutter/cookiecutter-django/pull/4705))
+
+## 2023.11.28
+
+
+### Fixed
+
+- Excludes devcontainer.json from the pre-commit ([#4702](https://github.com/cookiecutter/cookiecutter-django/pull/4702))
+
+### Updated
+
+- Update sphinx-rtd-theme to 2.0.0 ([#4700](https://github.com/cookiecutter/cookiecutter-django/pull/4700))
+
 ## 2023.11.24
 
 
