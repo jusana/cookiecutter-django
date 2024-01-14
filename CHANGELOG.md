@@ -3,6 +3,42 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2024.01.11
+
+
+### Updated
+
+- Update jinja2 to 3.1.3 ([#4784](https://github.com/cookiecutter/cookiecutter-django/pull/4784))
+
+## 2024.01.10
+
+
+### Updated
+
+- Update sentry-sdk to 1.39.2 ([#4782](https://github.com/cookiecutter/cookiecutter-django/pull/4782))
+
+## 2024.01.09
+
+
+### Documentation
+
+- Update allauth settings documentation links ([#4769](https://github.com/cookiecutter/cookiecutter-django/pull/4769))
+
+### Updated
+
+- Update django-allauth to 0.60.0 ([#4776](https://github.com/cookiecutter/cookiecutter-django/pull/4776))
+
+- Update psycopg to 3.1.17 ([#4777](https://github.com/cookiecutter/cookiecutter-django/pull/4777))
+
+## 2024.01.05
+
+
+### Updated
+
+- Auto-update pre-commit hooks ([#4774](https://github.com/cookiecutter/cookiecutter-django/pull/4774))
+
+- Update flake8 to 7.0.0 ([#4775](https://github.com/cookiecutter/cookiecutter-django/pull/4775))
+
 ## 2024.01.02
 
 
