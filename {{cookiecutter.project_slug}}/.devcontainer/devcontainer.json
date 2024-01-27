@@ -97,6 +97,8 @@
 				"actboy168.tasks",
 				"ms-azuretools.vscode-docker",
 				"donjayamanne.githistory",
+                "Atlassian.atlascode",
+                "mhutchie.git-graph",
                 // python
                 "ms-python.python",
                 "ms-python.vscode-pylance",
