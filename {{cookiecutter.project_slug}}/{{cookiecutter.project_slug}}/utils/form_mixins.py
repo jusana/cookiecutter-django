@@ -28,13 +28,13 @@ class FormSuccessMessageTaskResultMixin(FormSuccessMessageMixin):
 
     success_message = "La tâche <span id='task-id' \
                                       hx-get='%(task_status)s' \
-                                      hx-trigger='load' \
-                                      hx-swap='innerHTML' \
+                                      hx-trigger='load delay:1s' \
                                       class='text-decoration-underline' \
-                                      >task-id</span>' \
+                                      >%(task_id)s</span> \
                         a bien été envoyée.\
                         <br>Merci !"
-    task_result_class = ""
+    # task_result_class = ""
 
     def get_success_message(self, cleaned_data, **kwargs):
         return self.success_message % dict(cleaned_data, **kwargs)
+
