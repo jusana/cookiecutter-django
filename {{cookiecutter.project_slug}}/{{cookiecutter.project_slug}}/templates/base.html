@@ -68,6 +68,8 @@
       <!-- Your stuff: Third-party javascript libraries go here -->
       <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
       <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+      {% comment %}https://htmx.org/extensions/ajax-header/ --> pour déclencher le header X-Requested-With:XMLHttpRequest
+      <script src="https://unpkg.com/htmx.org/dist/ext/ajax-header.js"></script> {% endcomment %}
       {%- endraw %}{% endif %}{% raw %}
 
       <!-- place project specific Javascript in this file -->

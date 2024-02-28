@@ -12,6 +12,7 @@
     <img src="{{ image }}" alt="captcha" class="captcha me-1" />
     {% if audio %}</a>{% endif %}
       <button type="button" class="btn btn-light fw-bold me-1"
+        {% comment %}hx-ext="ajax-header"{% endcomment %}
         hx-get="{% url 'contact-form' %}"
         hx-trigger="click"
         hx-target="#div_id_captcha"
