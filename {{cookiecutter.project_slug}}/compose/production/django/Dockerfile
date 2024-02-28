@@ -119,7 +119,7 @@ COPY --chown=django:django . ${APP_HOME}
 {%- endif %}
 
 # make django owner of the WORKDIR directory as well.
-RUN chown django:django ${APP_HOME}
+RUN chown -R django:django ${APP_HOME}
 
 # volume pour media
 RUN mkdir ${APP_HOME}/mediafiles && chown django:django ${APP_HOME}/mediafiles
