@@ -110,8 +110,8 @@
 
   </head>
 
-  <body class="d-flex flex-column h-100" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
-
+  <body class="{% block bodyclass %}d-flex flex-column h-100{% endblock bodyclass %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    {% block body %}
     <header>
     {% include "cookie_consent/include/cookie-bar.html" %}
     {% block navbar %}{% include "pages/_base/navbar.html" %}{% endblock %}
@@ -129,15 +129,16 @@
       {% endif %}
     </div>
     <!-- msg frmwk-->
-  
+    {% block main %}
     <main role="main" class="container">
   
         {% block content %}
         <p>contenu par défaut</p>
         {% endblock content %}
   
-      </main> <!-- /main -->
-  
+    </main> <!-- /main -->
+    {% endblock main %}
+
     {% block footer %}
     <footer class="footer mt-auto">
         <!--div class="container"-->
@@ -145,7 +146,7 @@
         <!--/div-->
     </footer>
     {% endblock footer %}
-
+    {% endblock body %}
 
     {% block modal %}{% endblock modal %}
 
