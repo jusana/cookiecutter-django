@@ -3,6 +3,54 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2024.03.04
+
+
+### Updated
+
+- Update pytest to 8.1.0 ([#4900](https://github.com/cookiecutter/cookiecutter-django/pull/4900))
+
+- Update django to 4.2.11 ([#4901](https://github.com/cookiecutter/cookiecutter-django/pull/4901))
+
+## 2024.03.03
+
+
+### Updated
+
+- Update django-celery-beat to 2.6.0 ([#4899](https://github.com/cookiecutter/cookiecutter-django/pull/4899))
+
+## 2024.03.01
+
+
+### Changed
+
+- Add a maintainer guide to the docs ([#4884](https://github.com/cookiecutter/cookiecutter-django/pull/4884))
+
+### Updated
+
+- Auto-update pre-commit hooks ([#4897](https://github.com/cookiecutter/cookiecutter-django/pull/4897))
+
+- Update ruff to 0.3.0 ([#4896](https://github.com/cookiecutter/cookiecutter-django/pull/4896))
+
+## 2024.02.28
+
+
+### Fixed
+
+- Fix invalid HTML in django-allauth field element template ([#4894](https://github.com/cookiecutter/cookiecutter-django/pull/4894))
+
+- Fix permissions for media files when served by nginx ([#4889](https://github.com/cookiecutter/cookiecutter-django/pull/4889))
+
+### Documentation
+
+- Fix broken &#34;Two scoops of django&#34; link in FAQ ([#4892](https://github.com/cookiecutter/cookiecutter-django/pull/4892))
+
+### Updated
+
+- Update redis to 5.0.2 ([#4895](https://github.com/cookiecutter/cookiecutter-django/pull/4895))
+
+- Update sentry-sdk to 1.40.6 ([#4893](https://github.com/cookiecutter/cookiecutter-django/pull/4893))
+
 ## 2024.02.26
 
 
