@@ -44,7 +44,7 @@ services:
       - ./.envs/.local/.postgres
 
   pgadmin:
-    image: dpage/pgadmin4:6
+    image: dpage/pgadmin4:8
     container_name: {{ cookiecutter.project_slug }}_local_pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "user@domain.com"
@@ -73,21 +73,6 @@ services:
   #     - {{ cookiecutter.project_slug }}-index
   #     - /opt/solr/server/solr/configsets/solr-configset
 
-  docs:
-    image: {{ cookiecutter.project_slug }}_local_docs
-    container_name: {{ cookiecutter.project_slug }}_local_docs
-    build:
-      context: .
-      dockerfile: ./compose/local/docs/Dockerfile
-    env_file:
-      - ./.envs/.local/.django
-    volumes:
-      - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./{{ cookiecutter.project_slug }}:/app/{{ cookiecutter.project_slug }}:z
-    ports:
-      - '9000:9000'
-    command: /start-docs
   {%- if cookiecutter.use_mailpit == 'y' %}
 
   mailpit:
