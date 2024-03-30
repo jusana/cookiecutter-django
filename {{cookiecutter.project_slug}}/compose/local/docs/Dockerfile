@@ -10,7 +10,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential \
-  # psycopg2 dependencies
+  # psycopg dependencies
   libpq-dev \
   # git pour version gittée de django-cms
   git \
@@ -37,7 +37,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 RUN apt-get update && apt-get install --no-install-recommends -y \
   # To run the Makefile
   make \
-  # psycopg2 dependencies
+  # psycopg dependencies
   libpq-dev \
   # Translations dependencies
   gettext \
