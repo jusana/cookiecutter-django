@@ -657,6 +657,13 @@ Listed in alphabetical order.
     <td>DavidDiazPinto</td>
   </tr>
   <tr>
+    <td>David Păcioianu</td>
+    <td>
+      <a href="https://github.com/DavidPacioianu">DavidPacioianu</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Davit Tovmasyan</td>
     <td>
       <a href="https://github.com/davitovmasyan">davitovmasyan</a>
@@ -912,6 +919,13 @@ Listed in alphabetical order.
     <td>Guilherme Guy</td>
     <td>
       <a href="https://github.com/guilherme1guy">guilherme1guy</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>GvS</td>
+    <td>
+      <a href="https://github.com/GvS666">GvS666</a>
     </td>
     <td></td>
   </tr>
@@ -1661,6 +1675,13 @@ Listed in alphabetical order.
     <td>Patrick Tran</td>
     <td>
       <a href="https://github.com/theptrk">theptrk</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Patrick Zhang</td>
+    <td>
+      <a href="https://github.com/PatDuJour">PatDuJour</a>
     </td>
     <td></td>
   </tr>
