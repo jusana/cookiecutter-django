@@ -3,6 +3,116 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2024.04.20
+
+
+### Updated
+
+- Auto-update pre-commit hooks ([#5014](https://github.com/cookiecutter/cookiecutter-django/pull/5014))
+
+- Update pytest-xdist to 3.6.0 ([#5013](https://github.com/cookiecutter/cookiecutter-django/pull/5013))
+
+## 2024.04.19
+
+
+### Updated
+
+- Update ruff to 0.4.1 ([#5011](https://github.com/cookiecutter/cookiecutter-django/pull/5011))
+
+- Update ruff to 0.4.0 ([#5007](https://github.com/cookiecutter/cookiecutter-django/pull/5007))
+
+- Auto-update pre-commit hooks ([#5008](https://github.com/cookiecutter/cookiecutter-django/pull/5008))
+
+- Update sphinx to 7.3.7 ([#5010](https://github.com/cookiecutter/cookiecutter-django/pull/5010))
+
+## 2024.04.18
+
+
+### Updated
+
+- Update celery to 5.4.0 ([#5005](https://github.com/cookiecutter/cookiecutter-django/pull/5005))
+
+- Update sphinx to 7.3.6 ([#5004](https://github.com/cookiecutter/cookiecutter-django/pull/5004))
+
+## 2024.04.17
+
+
+### Updated
+
+- Update sphinx to 7.3.5 ([#5003](https://github.com/cookiecutter/cookiecutter-django/pull/5003))
+
+- Update gunicorn to 22.0.0 ([#5001](https://github.com/cookiecutter/cookiecutter-django/pull/5001))
+
+- Update sphinx to 7.3.3 ([#5000](https://github.com/cookiecutter/cookiecutter-django/pull/5000))
+
+## 2024.04.16
+
+
+### Changed
+
+- Add a prefix setting so that swagger tags are generated in a readable way ([#4975](https://github.com/cookiecutter/cookiecutter-django/pull/4975))
+
+### Fixed
+
+- Fix `runserver_plus` hot-reload when under Windows + Docker ([#4971](https://github.com/cookiecutter/cookiecutter-django/pull/4971))
+
+### Documentation
+
+- Update docs for `test_bare.sh` ([#4996](https://github.com/cookiecutter/cookiecutter-django/pull/4996))
+
+### Updated
+
+- Bump traefik from 2.11.0 to 2.11.2 ([#4993](https://github.com/cookiecutter/cookiecutter-django/pull/4993))
+
+- Update sphinx-autobuild to 2024.4.16 ([#4999](https://github.com/cookiecutter/cookiecutter-django/pull/4999))
+
+- Update sphinx-autobuild to 2024.4.13 ([#4991](https://github.com/cookiecutter/cookiecutter-django/pull/4991))
+
+- Update sentry-sdk to 1.45.0 ([#4982](https://github.com/cookiecutter/cookiecutter-django/pull/4982))
+
+- Update ruff to 0.3.7 ([#4989](https://github.com/cookiecutter/cookiecutter-django/pull/4989))
+
+- Auto-update pre-commit hooks ([#4988](https://github.com/cookiecutter/cookiecutter-django/pull/4988))
+
+## 2024.04.10
+
+
+### Updated
+
+- Bump python from 3.12.2 to 3.12.3 in docs ([#4979](https://github.com/cookiecutter/cookiecutter-django/pull/4979))
+
+- Bump python from 3.12.2 to 3.12.3 in local ([#4981](https://github.com/cookiecutter/cookiecutter-django/pull/4981))
+
+- Bump python from 3.12.2 to 3.12.3 in production ([#4980](https://github.com/cookiecutter/cookiecutter-django/pull/4980))
+
+## 2024.04.09
+
+
+### Documentation
+
+- Fix start command for docs ([#4978](https://github.com/cookiecutter/cookiecutter-django/pull/4978))
+
+## 2024.04.07
+
+
+### Updated
+
+- Auto-update pre-commit hooks ([#4974](https://github.com/cookiecutter/cookiecutter-django/pull/4974))
+
+## 2024.04.06
+
+
+### Fixed
+
+- Fix syntax error in GitHub CI workflow  ([#4972](https://github.com/cookiecutter/cookiecutter-django/pull/4972))
+
+## 2024.04.05
+
+
+### Updated
+
+- Update django-webpack-loader to 3.1.0 ([#4965](https://github.com/cookiecutter/cookiecutter-django/pull/4965))
+
 ## 2024.04.03
 
 
