@@ -10,7 +10,7 @@ repos:
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
-      - id: check-json
+      # - id: check-json
       - id: check-toml
       - id: check-xml
       - id: check-yaml
@@ -19,6 +19,11 @@ repos:
       - id: check-case-conflict
       - id: check-docstring-first
       - id: detect-private-key
+
+  - repo: https://gitlab.com/bmares/check-json5
+    rev: v1.0.0
+    hooks:
+      - id: check-json5
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v4.0.0-alpha.8

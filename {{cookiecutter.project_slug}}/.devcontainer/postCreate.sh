@@ -1,4 +1,5 @@
 #!/bin/bash
+git init --initial-branch=main
 pre-commit install
 sudo ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" --unattended
