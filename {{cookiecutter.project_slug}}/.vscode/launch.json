@@ -8,7 +8,7 @@
     "configurations": [
         {
             "name": "DEBUG: runserver_plus",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
             "console": "integratedTerminal",
@@ -25,7 +25,7 @@
         },
         {
             "name": "shell_plus",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
             "console": "integratedTerminal",

@@ -9,7 +9,6 @@
     "name": "{{cookiecutter.project_slug}}_dev",
     "dockerComposeFile": [
         "../local.yml"
-		//,"../docker-compose.yml",
 		//"docker-compose.yml"
     ],
     "init": true,
@@ -27,7 +26,7 @@
     ],
     // Tells devcontainer.json supporting services / tools whether they should run
     // /bin/sh -c "while sleep 1000; do :; done" when starting the container instead of the container’s default command
-    "overrideCommand": false,
+    "overrideCommand": true,
     "service": "django",
     // "remoteEnv": {"PATH": "/home/dev-user/.local/bin:${containerEnv:PATH}"},
 	// "remoteUser": "vscode"
@@ -98,13 +97,13 @@
 	// "forwardPorts": [],
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
 	// "runServices": [],
-	"runServices": [
-		"django",
+	//"runServices": [
+		//"django",
 		//"postgres",
 		// "celeryworker",
 		// "celerybeat",
 		// "solr"
-	],
+	//],
     // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
     // "shutdownAction": "none",
     // Uncomment the next line to run commands after the container is created.
