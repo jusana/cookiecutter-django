@@ -3,6 +3,90 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2024.05.13
+
+
+### Changed
+
+- Rename docker compose files to include &#39;docker-compose&#39; ([#4995](https://github.com/cookiecutter/cookiecutter-django/pull/4995))
+
+- Remove obsolete `version` element from docker compose files ([#5059](https://github.com/cookiecutter/cookiecutter-django/pull/5059))
+
+- Add Redis persistent storage when using celery ([#5063](https://github.com/cookiecutter/cookiecutter-django/pull/5063))
+
+### Fixed
+
+- Add noqa to ignore ruff false positive ([#5068](https://github.com/cookiecutter/cookiecutter-django/pull/5068))
+
+- Fix staticfile settings with cloud provider and whitenoise ([#5057](https://github.com/cookiecutter/cookiecutter-django/pull/5057))
+
+### Updated
+
+- Update djangorestframework-stubs to 3.15.0 ([#5041](https://github.com/cookiecutter/cookiecutter-django/pull/5041))
+
+- Update django-stubs to 5.0.0 ([#5040](https://github.com/cookiecutter/cookiecutter-django/pull/5040))
+
+- Update mypy to 1.10.0 ([#5022](https://github.com/cookiecutter/cookiecutter-django/pull/5022))
+
+- Update werkzeug to 3.0.3 ([#5050](https://github.com/cookiecutter/cookiecutter-django/pull/5050))
+
+## 2024.05.11
+
+
+### Updated
+
+- Update pre-commit to 3.7.1 ([#5066](https://github.com/cookiecutter/cookiecutter-django/pull/5066))
+
+- Auto-update pre-commit hooks ([#5067](https://github.com/cookiecutter/cookiecutter-django/pull/5067))
+
+## 2024.05.10
+
+
+### Updated
+
+- Update psycopg to 3.1.19 ([#5064](https://github.com/cookiecutter/cookiecutter-django/pull/5064))
+
+- Update django-upgrade to 1.17.0 ([#5065](https://github.com/cookiecutter/cookiecutter-django/pull/5065))
+
+- Auto-update pre-commit hooks ([#5062](https://github.com/cookiecutter/cookiecutter-django/pull/5062))
+
+- Update ruff to 0.4.4 ([#5061](https://github.com/cookiecutter/cookiecutter-django/pull/5061))
+
+## 2024.05.07
+
+
+### Updated
+
+- Update django to 4.2.13 ([#5058](https://github.com/cookiecutter/cookiecutter-django/pull/5058))
+
+## 2024.05.06
+
+
+### Fixed
+
+- Fix nginx image name in production.yml ([#5053](https://github.com/cookiecutter/cookiecutter-django/pull/5053))
+
+### Updated
+
+- Update django-model-utils to 4.5.1 ([#5044](https://github.com/cookiecutter/cookiecutter-django/pull/5044))
+
+- Update django to 4.2.12 ([#5056](https://github.com/cookiecutter/cookiecutter-django/pull/5056))
+
+- Update sentry-sdk to 2.1.1 ([#5055](https://github.com/cookiecutter/cookiecutter-django/pull/5055))
+
+- Update ruff to 0.4.3 ([#5049](https://github.com/cookiecutter/cookiecutter-django/pull/5049))
+
+## 2024.05.05
+
+
+### Updated
+
+- Auto-update pre-commit hooks ([#5046](https://github.com/cookiecutter/cookiecutter-django/pull/5046))
+
+- Update django-storages to 1.14.3 ([#5047](https://github.com/cookiecutter/cookiecutter-django/pull/5047))
+
+- Update coverage to 7.5.1 ([#5048](https://github.com/cookiecutter/cookiecutter-django/pull/5048))
+
 ## 2024.04.28
 
 
