@@ -1119,6 +1119,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Jason Mok</td>
+    <td>
+      <a href="https://github.com/jasonmokk">jasonmokk</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Jens Kaeske</td>
     <td>
       <a href="https://github.com/jkaeske">jkaeske</a>
@@ -1397,6 +1404,13 @@ Listed in alphabetical order.
       <a href="https://github.com/flyudvik">flyudvik</a>
     </td>
     <td>flyudvik</td>
+  </tr>
+  <tr>
+    <td>Manas Mallick</td>
+    <td>
+      <a href="https://github.com/ManDun">ManDun</a>
+    </td>
+    <td></td>
   </tr>
   <tr>
     <td>Manjit Pardeshi</td>
