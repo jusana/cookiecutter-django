@@ -25,7 +25,7 @@ RUN npm run build
 
 {%- endif %}
 # define an alias for the specific python version used in this file.
-FROM docker.io/python:3.12.4-slim-bookworm AS python
+FROM docker.io/python:3.12.5-slim-bookworm AS python
 
 # Python build stage
 FROM python AS python-build-stage
@@ -55,9 +55,9 @@ FROM python AS python-run-stage
 ARG BUILD_ENVIRONMENT=production
 ARG APP_HOME=/app
 
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV BUILD_ENV ${BUILD_ENVIRONMENT}
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV BUILD_ENV=${BUILD_ENVIRONMENT}
 
 WORKDIR ${APP_HOME}
 

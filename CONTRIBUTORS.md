@@ -223,6 +223,13 @@ Listed in alphabetical order.
     <td>MOGOST</td>
   </tr>
   <tr>
+    <td>Ali Shamakhi</td>
+    <td>
+      <a href="https://github.com/ali-shamakhi">ali-shamakhi</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Alvaro [Andor]</td>
     <td>
       <a href="https://github.com/andor-pierdelacabeza">andor-pierdelacabeza</a>
@@ -846,6 +853,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Filipe Nascimento</td>
+    <td>
+      <a href="https://github.com/FilipeNas">FilipeNas</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Florian Idelberger</td>
     <td>
       <a href="https://github.com/step21">step21</a>
@@ -1276,6 +1290,13 @@ Listed in alphabetical order.
     <td>Kevin A. Stone</td>
     <td>
       <a href="https://github.com/"></a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Kevin Mills</td>
+    <td>
+      <a href="https://github.com/millsks">millsks</a>
     </td>
     <td></td>
   </tr>
