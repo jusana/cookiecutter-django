@@ -3,6 +3,66 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2024.08.26
+
+
+### Changed
+
+- Check DB migrations in GitHub CI ([#5322](https://github.com/cookiecutter/cookiecutter-django/pull/5322))
+
+### Updated
+
+- Update mypy to 1.11.2 ([#5320](https://github.com/cookiecutter/cookiecutter-django/pull/5320))
+
+## 2024.08.23
+
+
+### Updated
+
+- Update werkzeug to 3.0.4 ([#5313](https://github.com/cookiecutter/cookiecutter-django/pull/5313))
+
+- Update ruff to 0.6.2 ([#5316](https://github.com/cookiecutter/cookiecutter-django/pull/5316))
+
+## 2024.08.22
+
+
+### Updated
+
+- Update django-celery-beat to 2.7.0 ([#5315](https://github.com/cookiecutter/cookiecutter-django/pull/5315))
+
+## 2024.08.21
+
+
+### Changed
+
+- Add type hint for UserFactory ([#5312](https://github.com/cookiecutter/cookiecutter-django/pull/5312))
+
+## 2024.08.20
+
+
+### Fixed
+
+- Add missing extra_body block in allauth entrance.html ([#5308](https://github.com/cookiecutter/cookiecutter-django/pull/5308))
+
+### Updated
+
+- Bump sass-loader from 14.2.1 to 16.0.1 ([#5309](https://github.com/cookiecutter/cookiecutter-django/pull/5309))
+
+- Bump node from 20 to 22 ([#5039](https://github.com/cookiecutter/cookiecutter-django/pull/5039))
+
+- Bump webpack-merge from 5.10.0 to 6.0.1 ([#5187](https://github.com/cookiecutter/cookiecutter-django/pull/5187))
+
+- Bump css-loader from 6.11.0 to 7.1.2 ([#5089](https://github.com/cookiecutter/cookiecutter-django/pull/5089))
+
+- Bump traefik from 2.11.2 to 3.1.2 ([#5282](https://github.com/cookiecutter/cookiecutter-django/pull/5282))
+
+## 2024.08.19
+
+
+### Updated
+
+- Update factory-boy to 3.3.1 ([#5307](https://github.com/cookiecutter/cookiecutter-django/pull/5307))
+
 ## 2024.08.17
 
 
