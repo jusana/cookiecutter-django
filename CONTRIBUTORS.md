@@ -1469,6 +1469,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Marlon Castillo</td>
+    <td>
+      <a href="https://github.com/mcastle">mcastle</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Martin Blech</td>
     <td>
       <a href="https://github.com/"></a>
@@ -1924,6 +1931,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>rxm7706</td>
+    <td>
+      <a href="https://github.com/rxm7706">rxm7706</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Ryan Fitch</td>
     <td>
       <a href="https://github.com/ryfi">ryfi</a>
@@ -2223,6 +2237,13 @@ Listed in alphabetical order.
       <a href="https://github.com/westurner">westurner</a>
     </td>
     <td>westurner</td>
+  </tr>
+  <tr>
+    <td>Will</td>
+    <td>
+      <a href="https://github.com/novucs">novucs</a>
+    </td>
+    <td></td>
   </tr>
   <tr>
     <td>Will Farley</td>
