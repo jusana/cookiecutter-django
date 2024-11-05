@@ -545,6 +545,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Christian Jensen</td>
+    <td>
+      <a href="https://github.com/jensenbox">jensenbox</a>
+    </td>
+    <td>cjensen</td>
+  </tr>
+  <tr>
     <td>Christopher Clarke</td>
     <td>
       <a href="https://github.com/chrisdev">chrisdev</a>
@@ -877,6 +884,13 @@ Listed in alphabetical order.
     <td>Floyd Hightower</td>
     <td>
       <a href="https://github.com/fhightower">fhightower</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Francisco Navarro Morales </td>
+    <td>
+      <a href="https://github.com/spothound">spothound</a>
     </td>
     <td></td>
   </tr>
@@ -1479,6 +1493,13 @@ Listed in alphabetical order.
     <td>Marios Frixou</td>
     <td>
       <a href="https://github.com/frixou89">frixou89</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mariot Tsitoara</td>
+    <td>
+      <a href="https://github.com/mariot">mariot</a>
     </td>
     <td></td>
   </tr>

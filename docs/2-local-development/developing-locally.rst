@@ -24,8 +24,7 @@ First things first.
 
     $ source <virtual env path>/bin/activate
 
-#.
-    .. include:: generate-project-block.rst
+#. .. include:: generate-project-block.rst
 
 #. Install development requirements: ::
 
@@ -56,8 +55,6 @@ First things first.
 #. Set the environment variables for your database(s): ::
 
     $ export DATABASE_URL=postgres://postgres:<password>@127.0.0.1:5432/<DB name given to createdb>
-    # Optional: set broker URL if using Celery
-    $ export CELERY_BROKER_URL=redis://localhost:6379/0
 
    .. note::
 
@@ -219,7 +216,7 @@ The project comes with a simple task for manual testing purposes, inside `<proje
 
 You can also use Django admin to queue up tasks, thanks to the `django-celerybeat`_ package.
 
-.. _Getting started with Redis guide: https://redis.io/docs/getting-started/
+.. _Getting started with Redis: https://redis.io/docs/getting-started/
 .. _Celery Workers Guide: https://docs.celeryq.dev/en/stable/userguide/workers.html
 .. _django-celerybeat: https://django-celery-beat.readthedocs.io/en/latest/
 
