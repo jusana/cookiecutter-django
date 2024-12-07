@@ -49,7 +49,7 @@ drf-spectacular==0.27.2  # https://github.com/tfranzel/drf-spectacular
 {%- if cookiecutter.frontend_pipeline == 'Webpack' %}
 django-webpack-loader==3.1.1  # https://github.com/django-webpack/django-webpack-loader
 {%- endif %}
-django-admin-interface==0.28.5
+django-admin-interface==0.29.2
 django-json-widget==1.1.1
 # bug dans jsoneditor pour django4
 # django-json-widget==1.1.1
@@ -60,15 +60,15 @@ django-json-widget==1.1.1
 # pb compat django 4.1
 # SuccessURLAllowedHostsMixin
 # https://github.com/jazzband/django-cookie-consent/issues/87
-django-cookie-consent==0.4.0
+django-cookie-consent==0.6.0
 # git+https://github.com/jazzband/django-cookie-consent@0.3.2-dev.1
-django-haystack==3.2.1
-pysolr==3.9.0
+django-haystack==3.3.0
+pysolr==3.10.0
 # TODO mettre la version forkée github
 # django-page-cms==2.0.11
 git+https://github.com/jusana/django-page-cms@master
 django-taggit==5.0.1
-django-ckeditor==6.7.0
+django-ckeditor==6.7.2
 django-simple-captcha==0.6.0
 django-tables2==2.7.0
 django-filter==23.5
@@ -79,4 +79,4 @@ django-htmx==1.17.2
 # django-siteajax
 # django-forms-dynamic
 # https://www.bugbytes.io/posts/django-and-htmx-chained-dropdown/
-django-bootstrap5==23.4
+django-bootstrap5==24.3
