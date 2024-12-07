@@ -1,5 +1,5 @@
 {% raw %}
-{% load static i18n {% endraw %}
+{% load static i18n cookie_consent_tags {% endraw %}
 
 {%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}compress{%- endif %}{% raw %}%}{% endraw %}
   {%- if cookiecutter.frontend_pipeline == 'Webpack' %}{% raw %}
@@ -84,8 +84,6 @@
       {%- endraw %}{% elif cookiecutter.frontend_pipeline == "Webpack" %}{% raw %}
       {% render_bundle 'project' 'js' attrs='defer' %}
       {%- endraw %}{% endif %}{% raw %}
-
-      <script type="text/javascript" src="{% static 'cookie_consent/cookiebar.js' %}"></script>
 
       <!-- Matomo -->
       {% if request|cookie_group_accepted:"analytics" %}
