@@ -734,6 +734,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Denis Darii</td>
+    <td>
+      <a href="https://github.com/DNX">DNX</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Denis Orehovsky</td>
     <td>
       <a href="https://github.com/apirobot">apirobot</a>
@@ -1885,6 +1892,13 @@ Listed in alphabetical order.
     <td>quroom</td>
     <td>
       <a href="https://github.com/quroom">quroom</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>qwerrrqw</td>
+    <td>
+      <a href="https://github.com/qwerrrqw">qwerrrqw</a>
     </td>
     <td></td>
   </tr>

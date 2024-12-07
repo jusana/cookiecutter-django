@@ -3,6 +3,153 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2024.12.03
+
+
+### Updated
+
+- Update django-upgrade to 1.22.2 ([#5567](https://github.com/cookiecutter/cookiecutter-django/pull/5567))
+
+## 2024.12.02
+
+
+### Updated
+
+- Update pytest to 8.3.4 ([#5566](https://github.com/cookiecutter/cookiecutter-django/pull/5566))
+
+## 2024.12.01
+
+
+### Updated
+
+- Update django-allauth to 65.3.0 ([#5565](https://github.com/cookiecutter/cookiecutter-django/pull/5565))
+
+## 2024.11.29
+
+
+### Updated
+
+- Update ruff to 0.8.1 ([#5557](https://github.com/cookiecutter/cookiecutter-django/pull/5557))
+
+- Update djlint to 1.36.3 ([#5558](https://github.com/cookiecutter/cookiecutter-django/pull/5558))
+
+## 2024.11.28
+
+
+### Updated
+
+- Update djlint to 1.36.2 ([#5555](https://github.com/cookiecutter/cookiecutter-django/pull/5555))
+
+## 2024.11.27
+
+
+### Fixed
+
+- Pin dart-sass to 1.77.6 to avoid deprecation warnings ([#5552](https://github.com/cookiecutter/cookiecutter-django/pull/5552))
+
+### Updated
+
+- Bump gulp-imagemin from 7.1.0 to 9.1.0 ([#5052](https://github.com/cookiecutter/cookiecutter-django/pull/5052))
+
+- Bump gulp from 4.0.2 to 5.0.0 ([#4949](https://github.com/cookiecutter/cookiecutter-django/pull/4949))
+
+## 2024.11.26
+
+
+### Updated
+
+- Update coverage to 7.6.8 ([#5547](https://github.com/cookiecutter/cookiecutter-django/pull/5547))
+
+- Update watchfiles to 1.0.0 ([#5548](https://github.com/cookiecutter/cookiecutter-django/pull/5548))
+
+## 2024.11.22
+
+
+### Updated
+
+- Update ruff to 0.8.0 ([#5545](https://github.com/cookiecutter/cookiecutter-django/pull/5545))
+
+## 2024.11.21
+
+
+### Changed
+
+- Add support for secure Redis (TLS support) ([#5526](https://github.com/cookiecutter/cookiecutter-django/pull/5526))
+
+### Updated
+
+- Update sentry-sdk to 2.19.0 ([#5543](https://github.com/cookiecutter/cookiecutter-django/pull/5543))
+
+- Update uvicorn to 0.32.1 ([#5539](https://github.com/cookiecutter/cookiecutter-django/pull/5539))
+
+- Bump traefik from 3.2.0 to 3.2.1 ([#5541](https://github.com/cookiecutter/cookiecutter-django/pull/5541))
+
+## 2024.11.20
+
+
+### Fixed
+
+- Fix typos in translation instructions in README ([#5538](https://github.com/cookiecutter/cookiecutter-django/pull/5538))
+
+### Updated
+
+- Bump amazon/aws-cli from 2.21.0 to 2.22.1 ([#5537](https://github.com/cookiecutter/cookiecutter-django/pull/5537))
+
+## 2024.11.16
+
+
+### Updated
+
+- Update ruff to 0.7.4 ([#5531](https://github.com/cookiecutter/cookiecutter-django/pull/5531))
+
+## 2024.11.15
+
+
+### Updated
+
+- Update coverage to 7.6.5 ([#5529](https://github.com/cookiecutter/cookiecutter-django/pull/5529))
+
+## 2024.11.14
+
+
+### Updated
+
+- Bump amazon/aws-cli from 2.20.0 to 2.21.0 ([#5528](https://github.com/cookiecutter/cookiecutter-django/pull/5528))
+
+## 2024.11.13
+
+
+### Updated
+
+- Update werkzeug to 3.1.3 ([#5524](https://github.com/cookiecutter/cookiecutter-django/pull/5524))
+
+- Update ruff to 0.7.3 ([#5521](https://github.com/cookiecutter/cookiecutter-django/pull/5521))
+
+- Bump amazon/aws-cli from 2.19.0 to 2.20.0 ([#5527](https://github.com/cookiecutter/cookiecutter-django/pull/5527))
+
+- Update django-allauth to 65.2.0 ([#5523](https://github.com/cookiecutter/cookiecutter-django/pull/5523))
+
+## 2024.11.08
+
+
+### Updated
+
+- Update ruff pre-commit hook to 0.7.3 ([#5522](https://github.com/cookiecutter/cookiecutter-django/pull/5522))
+
+## 2024.11.07
+
+
+### Updated
+
+- Update djlint to 1.36.1 ([#5519](https://github.com/cookiecutter/cookiecutter-django/pull/5519))
+
+## 2024.11.05
+
+
+### Updated
+
+- Update djlint to 1.36.0 ([#5517](https://github.com/cookiecutter/cookiecutter-django/pull/5517))
+
 ## 2024.11.04
 
 
