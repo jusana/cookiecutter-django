@@ -804,6 +804,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Ed Morley</td>
+    <td>
+      <a href="https://github.com/edmorley">edmorley</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Emanuel Calso</td>
     <td>
       <a href="https://github.com/bloodpet">bloodpet</a>
@@ -996,6 +1003,13 @@ Listed in alphabetical order.
     <td>Hamish Durkin</td>
     <td>
       <a href="https://github.com/durkode">durkode</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Hana Belay</td>
+    <td>
+      <a href="https://github.com/earthcomfy">earthcomfy</a>
     </td>
     <td></td>
   </tr>
@@ -1885,6 +1899,13 @@ Listed in alphabetical order.
     <td>Plurific</td>
     <td>
       <a href="https://github.com/paulschwenn">paulschwenn</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Pulse-Mind</td>
+    <td>
+      <a href="https://github.com/pulse-mind">pulse-mind</a>
     </td>
     <td></td>
   </tr>
