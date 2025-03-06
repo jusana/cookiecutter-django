@@ -134,3 +134,6 @@ MIGRATION_MODULES = {
 
 # https://github.com/cookiecutter/cookiecutter-django/discussions/4185
 RUNSERVERPLUS_POLLER_RELOADER_TYPE = "stat"
+
+
+INSTALLED_APPS += ["django_harlequin"]

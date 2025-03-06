@@ -42,18 +42,6 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
-  pgadmin:
-    image: dpage/pgadmin4:8
-    container_name: {{ cookiecutter.project_slug }}_local_pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "user@domain.com"
-      PGADMIN_DEFAULT_PASSWORD: "SuperSecret"
-      PGADMIN_CONFIG_LOGIN_BANNER: "'PGAdmin de dev !!'"
-      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
-    depends_on:
-      - postgres
-    ports:
-      - "8888:80"
 
   # à activer une fois solr schema généré
   # solr:
