@@ -1,5 +1,4 @@
-{% raw %}{% load static i18n %}
-{% load account %}
+{% raw %}{% load cache static i18n account pages_tags %}
 <nav class="navbar navbar-expand-md navbar-light bg-light mb-2">
         <div class="container-fluid">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +9,8 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/pages">pages <span class="visually-hidden">(current)</span></a>
+                {% comment %}<a class="nav-link" href="{% show_absolute_url 'carnet' %}">pages<span class="visually-hidden">(current)</span></a>{% endcomment %}
+                <a class="nav-link" href="{% url 'about' %}">pages<span class="visually-hidden">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}">About</a>

@@ -431,7 +431,7 @@ WEBPACK_LOADER = {
 
 # This is defined here as a do-nothing function because we can't import
 # django.utils.translation -- that module depends on the settings.
-gettext_noop = lambda s: s  # noqa
+gettext_noop = lambda s: s  # noqa: E731
 
 PAGE_LANGUAGES = (
     ("fr", gettext_noop("Français")),
@@ -473,10 +473,10 @@ HAYSTACK_CONNECTIONS = {
     "default": {
         "ENGINE": "haystack.backends.solr_backend.SolrEngine",
         "URL": "http://solr:8983/solr/{{cookiecutter.project_slug}}-index",
-        "ADMIN_URL": "http://solr:8983/solr/admin/cores"
+        "ADMIN_URL": "http://solr:8983/solr/admin/cores",
         # ,'EXCLUDED_INDEXES': ['thirdpartyapp.search_indexes.BarIndex']
     },
 }
 
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"
 

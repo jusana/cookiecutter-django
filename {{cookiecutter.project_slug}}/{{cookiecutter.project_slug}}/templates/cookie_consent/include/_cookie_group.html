@@ -11,11 +11,11 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <th scope="col" class="">Nom du cookie</th>
-        <th scope="col" class="">Description</th>
+        <th scope="col">Nom du cookie</th>
+        <th scope="col">Description</th>
         {% if not cookie_group.is_required %}
-        <th scope="col" class="">Accepter</th>
-        <th scope="col" class="">Refuser</th>
+        <th scope="col">Accepter</th>
+        <th scope="col">Refuser</th>
         {% endif %}
       </tr>
       </thead>
@@ -39,21 +39,23 @@
             {% if request|cookie_group_accepted:cookie.varname %}
               <span class="text-center text-success"><i class="fas fa-check-circle"></i></span>
             {% else %}
-              <form class="cookie-consent-accept" action="{% url "cookie_consent_accept" cookie.varname %}" method="POST">
+              <form class="cookie-consent-accept" action="{% url "cookie_consent_accept" cookie.varname %}" method="post">
                 {% csrf_token %}
                 <input type="submit" class="btn btn-success btn-sm" value="{% trans "Accepter" %}">
               </form>
             {% endif %}
           </td>
+          {# djlint:off #}
           <td class="text-center">
             {% if request|cookie_group_declined:cookie.varname %}
               <span class="text-danger"><i class="fas fa-ban"></i></span>
             {% else %}
-              <form class="cookie-consent-accept" action="{% url "cookie_consent_decline" cookie.varname %}" method="POST">
+              <form class="cookie-consent-accept" action="{% url "cookie_consent_decline" cookie.varname %}" method="post">
                 {% csrf_token %}
                 <input type="submit" class="btn btn-danger btn-sm" value="{% trans "Refuser" %}">
               </form>
             {% endif %}
+            {# djlint:on #}
           {% else %}
           <td colspan="2">
             Nécessaire au fonctionnement
@@ -69,7 +71,7 @@
             {% if request|cookie_group_accepted:cookie_group.varname %}
               <span class="text-success text-center">{% trans "Tous acceptés" %}</span>
             {% else %}
-              <form action="{% url "cookie_consent_accept" cookie_group.varname %}" method="POST">
+              <form action="{% url "cookie_consent_accept" cookie_group.varname %}" method="post">
                 {% csrf_token %}
                 <button type="submit" class="btn-success btn-sm"><i class="fas fa-check-circle"></i> {% trans "Accepter tous" %}</button>
               </form>
@@ -79,7 +81,7 @@
             {% if request|cookie_group_declined:cookie_group.varname %}
               <span class="text-danger text-center">{% trans "Tous Refusés" %}</span>
             {% else %}
-              <form action="{% url "cookie_consent_decline" cookie_group.varname %}" method="POST">
+              <form action="{% url "cookie_consent_decline" cookie_group.varname %}" method="post">
                 {% csrf_token %}
                 <button type="submit" class="btn-danger btn-sm">{% trans "Refuser tous" %}</button>
               </form>
