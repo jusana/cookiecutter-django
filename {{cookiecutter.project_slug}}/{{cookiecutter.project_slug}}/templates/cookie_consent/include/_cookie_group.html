@@ -16,6 +16,8 @@
         {% if not cookie_group.is_required %}
         <th scope="col">Accepter</th>
         <th scope="col">Refuser</th>
+        {% else %}
+        <th scope="col" colspan="2">Action</th>
         {% endif %}
       </tr>
       </thead>
@@ -73,7 +75,7 @@
             {% else %}
               <form action="{% url "cookie_consent_accept" cookie_group.varname %}" method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn-success btn-sm"><i class="fas fa-check-circle"></i> {% trans "Accepter tous" %}</button>
+                <button type="submit" class="btn btn-success"><i class="fas fa-check-circle"></i>{% trans "Accepter tous" %}</button>
               </form>
             {% endif %}
           </td>
@@ -83,7 +85,7 @@
             {% else %}
               <form action="{% url "cookie_consent_decline" cookie_group.varname %}" method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn-danger btn-sm">{% trans "Refuser tous" %}</button>
+                <button type="submit" class="btn btn-danger">{% trans "Refuser tous" %}</button>
               </form>
             {% endif %}
           </td>

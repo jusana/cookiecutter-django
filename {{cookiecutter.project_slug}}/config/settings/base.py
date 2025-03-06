@@ -458,7 +458,7 @@ CKEDITOR_UPLOAD_PATH = "pages-cms/"
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 
-COOKIE_CONSENT_NAME = "{{cookiecutter.project_slug}}_cookie_consent"
+COOKIE_CONSENT_NAME = "cookie_consent"
 COOKIE_CONSENT_MAX_AGE = 60 * 60 * 24 * 365 * 1  # 1 year
 
 # HAYSTACK_CONNECTIONS = {
