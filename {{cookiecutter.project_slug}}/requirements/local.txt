@@ -47,3 +47,7 @@ pytest-django==4.10.0  # https://github.com/pytest-dev/pytest-django
 # ------------------------------------------------------------------------------
 django-harlequin==1.5.0
 harlequin[postgres]==2.0.5
+
+
+# django-tailwind[reload]==3.8.0
+# django-tailwind-4[reload]==0.1.4
