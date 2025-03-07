@@ -17,30 +17,32 @@
         hx-swap="outerHTML"
 >
 {% comment %} spinner d'attente {% endcomment %}
+{# djlint:off #}
 <svg class="htmx-indicator" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-        <g>
-          <circle cx="60" cy="50" r="4" fill="#ec1c24">
-            <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="-0.67s"></animate>
-            <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="-0.67s"></animate>
-          </circle>
-          <circle cx="60" cy="50" r="4" fill="#ec1c24">
-            <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="-0.33s"></animate>
-            <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="-0.33s"></animate>
-          </circle>
-          <circle cx="60" cy="50" r="4" fill="#ec1c24">
-            <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="0s"></animate>
-            <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0s"></animate>
-          </circle>
-        </g><g transform="translate(-15 0)">
-          <path d="M50 50L20 50A30 30 0 0 0 80 50Z" fill="#fdbd10" transform="rotate(90 50 50)"></path>
-          <path d="M50 50L20 50A30 30 0 0 0 80 50Z" fill="#fdbd10">
-            <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;45 50 50;0 50 50" keyTimes="0;0.5;1"></animateTransform>
-          </path>
-          <path d="M50 50L20 50A30 30 0 0 1 80 50Z" fill="#fdbd10">
-            <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;-45 50 50;0 50 50" keyTimes="0;0.5;1"></animateTransform>
-          </path>
-        </g>
-        </svg>
+  <g>
+    <circle cx="60" cy="50" r="4" fill="#ec1c24">
+      <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="-0.67s"></animate>
+      <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="-0.67s"></animate>
+    </circle>
+    <circle cx="60" cy="50" r="4" fill="#ec1c24">
+      <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="-0.33s"></animate>
+      <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="-0.33s"></animate>
+    </circle>
+    <circle cx="60" cy="50" r="4" fill="#ec1c24">
+      <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="0s"></animate>
+      <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0s"></animate>
+    </circle>
+  </g><g transform="translate(-15 0)">
+    <path d="M50 50L20 50A30 30 0 0 0 80 50Z" fill="#fdbd10" transform="rotate(90 50 50)"></path>
+    <path d="M50 50L20 50A30 30 0 0 0 80 50Z" fill="#fdbd10">
+      <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;45 50 50;0 50 50" keyTimes="0;0.5;1"></animateTransform>
+    </path>
+    <path d="M50 50L20 50A30 30 0 0 1 80 50Z" fill="#fdbd10">
+      <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;-45 50 50;0 50 50" keyTimes="0;0.5;1"></animateTransform>
+    </path>
+  </g>
+</svg>
+{# djlint:on #}
 </div>
 {% endif %}
 
@@ -60,13 +62,13 @@
     {% for i in celery_task_result.result %}
     <a href="{{i.attributes.url}}" class="list-group-item list-group-item-action">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1"><mark>{{ i.attributes.doi }}</mark> | {% for t in  i.attributes.titles %}{{t.title}} {% endfor %}</h5>
+        <h5 class="mb-1"><mark>{{ i.attributes.doi }}</mark> | {% for t in i.attributes.titles %}{{t.title}} {% endfor %}</h5>
         <div>
         <small class="badge bg-info rounded-pill">{{l}}</small>
         </div>
       </div>
-      <p class="mb-1">{% for t in  i.attributes.descriptions %}{{t.description}} {% endfor %}</p>
-      <p class="mb-1">{% for t in  i.attributes.creators %}{% if forloop.last  %}{{t.name}}{% else %}{{t.name}} - {% endif %}{% endfor %}</p>
+      <p class="mb-1">{% for t in i.attributes.descriptions %}{{t.description}} {% endfor %}</p>
+      <p class="mb-1">{% for t in i.attributes.creators %}{% if forloop.last %}{{t.name}}{% else %}{{t.name}} - {% endif %}{% endfor %}</p>
       <small>redirection: {{i.attributes.url}}</small>
     </a>
     {% endfor %}
@@ -79,10 +81,10 @@
         {% comment %} hx-select="#list-dois" {% endcomment %}
         hx-swap="outerHTML"
 >
-<img  id="spinner" class="htmx-indicator" src="https://training.pndb.fr/static/images/interface/pacman.png"/>
+<img id="spinner" alt="spinner" class="htmx-indicator" src="https://training.pndb.fr/static/images/interface/pacman.png"/>
 </div>
 {% endif %}
 {% endif %}
 
-{% endblock %}
+{% endblock content %}
 {% endraw %}

@@ -42,6 +42,7 @@ SITE_ID = 1
 USE_I18N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
+# pê à mettre à False pour la compatibilité avec django-page-cms
 # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
 LOCALE_PATHS = [str(BASE_DIR / "locale")]
 
@@ -397,6 +398,8 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 50
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
@@ -431,7 +434,7 @@ WEBPACK_LOADER = {
 
 # This is defined here as a do-nothing function because we can't import
 # django.utils.translation -- that module depends on the settings.
-gettext_noop = lambda s: s  # noqa
+gettext_noop = lambda s: s  # noqa: E731
 
 PAGE_LANGUAGES = (
     ("fr", gettext_noop("Français")),
@@ -458,7 +461,7 @@ CKEDITOR_UPLOAD_PATH = "pages-cms/"
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 
-COOKIE_CONSENT_NAME = "{{cookiecutter.project_slug}}_cookie_consent"
+COOKIE_CONSENT_NAME = "cookie_consent"
 COOKIE_CONSENT_MAX_AGE = 60 * 60 * 24 * 365 * 1  # 1 year
 
 # HAYSTACK_CONNECTIONS = {
@@ -473,10 +476,10 @@ HAYSTACK_CONNECTIONS = {
     "default": {
         "ENGINE": "haystack.backends.solr_backend.SolrEngine",
         "URL": "http://solr:8983/solr/{{cookiecutter.project_slug}}-index",
-        "ADMIN_URL": "http://solr:8983/solr/admin/cores"
+        "ADMIN_URL": "http://solr:8983/solr/admin/cores",
         # ,'EXCLUDED_INDEXES': ['thirdpartyapp.search_indexes.BarIndex']
     },
 }
 
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"
 

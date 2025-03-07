@@ -1,5 +1,5 @@
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div, Layout, Submit, HTML
+from crispy_forms.layout import HTML, Div, Layout, Submit
 from django_filters import FilterSet
 
 
@@ -38,12 +38,17 @@ class CrispyFilterSet(FilterSet):
 
         # fields['archived'].initial = False
 
-        fields = fields + [
-            Submit("submit button", "Chercher"),
-            # Reset('reset button', 'Effacer!'),
-        ]
+        # fields = fields + [
+        #     Submit("submit button", "Chercher"),
+        #     # Reset('reset button', 'Effacer!'),
+        # ]
+        fields = [*fields, Submit("submit button", "Chercher")]
         helper.layout = Layout(
-            # HTML('<div class="spinner-border htmx-indicator" role="status"><span class="visually-hidden">Loading...</span></div>'),
+            # HTML('
+            # <div class="spinner-border htmx-indicator" role="status">
+            # <span class="visually-hidden">Loading...</span>
+            # </div>'
+            # ),
             HTML('<div class="progress"><div class="indeterminate"></div></div>'),
             Div(
                 *fields,

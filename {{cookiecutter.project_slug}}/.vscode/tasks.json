@@ -16,25 +16,14 @@
       }
     },
     {
-      "label": "runserver",
+      "label": "harlequin",
       "type": "shell",
       // on récycle le enterypoint docker
-      "command": "/entrypoint /start",
+      "command": "/entrypoint ./manage.py harlequin",
       "options": {
         "statusbar": {
           "color": "#22C1D6",
-          "label": "$(ports-open-browser-icon) runserver"
-        }
-      }
-    },
-    {
-      "label": "docker rebuild prod",
-      "type": "shell",
-      "command": "docker compose -f production_with_media_files.yml build",
-      "options": {
-        "statusbar": {
-          "color": "#0b7280",
-          "label": "$(extensions) docker rebuild prod"
+          "label": "$(ports-open-browser-icon) harlequinDB"
         }
       }
     },
