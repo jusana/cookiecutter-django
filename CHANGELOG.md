@@ -3,6 +3,96 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## 2025.03.06
+
+
+### Updated
+
+- Update django to 5.0.13 ([#5719](https://github.com/cookiecutter/cookiecutter-django/pull/5719))
+
+## 2025.03.04
+
+
+### Changed
+
+- Add groups for dependabot updates ([#5709](https://github.com/cookiecutter/cookiecutter-django/pull/5709))
+
+### Updated
+
+- Update sphinx to 8.3.0 ([#5714](https://github.com/cookiecutter/cookiecutter-django/pull/5714))
+
+- Update pytest to 8.3.5 ([#5713](https://github.com/cookiecutter/cookiecutter-django/pull/5713))
+
+## 2025.03.01
+
+
+### Updated
+
+- Update ruff to 0.9.9 ([#5711](https://github.com/cookiecutter/cookiecutter-django/pull/5711))
+
+## 2025.02.28
+
+
+### Updated
+
+- Update ruff to 0.9.8 ([#5708](https://github.com/cookiecutter/cookiecutter-django/pull/5708))
+
+- Bump babel-loader from 9.2.1 to 10.0.0 ([#5710](https://github.com/cookiecutter/cookiecutter-django/pull/5710))
+
+## 2025.02.26
+
+
+### Updated
+
+- Bump traefik from 3.3.3 to 3.3.4 ([#5705](https://github.com/cookiecutter/cookiecutter-django/pull/5705))
+
+## 2025.02.25
+
+
+### Documentation
+
+- Fix links to FAQ about `contrib.sites` directory ([#5704](https://github.com/cookiecutter/cookiecutter-django/pull/5704))
+
+## 2025.02.23
+
+
+### Changed
+
+- Group dependabot docker directories ([#5698](https://github.com/cookiecutter/cookiecutter-django/pull/5698))
+
+### Updated
+
+- Update sphinx to 8.2.1 ([#5696](https://github.com/cookiecutter/cookiecutter-django/pull/5696))
+
+- Update psycopg to 3.2.5 ([#5697](https://github.com/cookiecutter/cookiecutter-django/pull/5697))
+
+## 2025.02.21
+
+
+### Updated
+
+- Update djangorestframework-stubs to 3.15.3 ([#5695](https://github.com/cookiecutter/cookiecutter-django/pull/5695))
+
+- Update sphinx to 8.2.0 ([#5693](https://github.com/cookiecutter/cookiecutter-django/pull/5693))
+
+- Update ruff to 0.9.7 ([#5694](https://github.com/cookiecutter/cookiecutter-django/pull/5694))
+
+## 2025.02.17
+
+
+### Updated
+
+- Update sentry-sdk to 2.22.0 ([#5692](https://github.com/cookiecutter/cookiecutter-django/pull/5692))
+
+- Update django-storages to 1.14.5 ([#5690](https://github.com/cookiecutter/cookiecutter-django/pull/5690))
+
+## 2025.02.14
+
+
+### Updated
+
+- Bump node from 22.13 to 22.14 ([#5688](https://github.com/cookiecutter/cookiecutter-django/pull/5688))
+
 ## 2025.02.13
 
 
