@@ -24,7 +24,6 @@
     {% with cookie_groups=cookie_groups|join:", " %}
     <div class="cookie-bar">
       Ce site utilise des cookies  ({{ cookie_groups }}) pour améliorer les performances et l'expérience utilisateur.
-        {# Button is the more accessible role, but an anchor tag would also work #}
         <button type="button" class="cookie-consent__accept btn btn-success btn-sm">Accepter</button>
         <button type="button" class="cookie-consent__decline btn btn-danger btn-sm">Decliner</button>
         <a href="{{ url_cookies }}" class="btn btn-warning btn-sm">Paramétrer</a>
