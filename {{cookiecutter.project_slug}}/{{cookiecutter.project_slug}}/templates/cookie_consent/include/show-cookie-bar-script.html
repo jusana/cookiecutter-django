@@ -5,8 +5,6 @@
 
     showCookieBar({
       statusUrl: '{{ status_url|escapejs }}',
-      templateSelector: '#cookie-consent__cookie-bar',
-      cookieGroupsSelector: '#cookie-consent__cookie-groups',
       onShow: () => document.querySelector('body').classList.add('with-cookie-bar'),
       onAccept: (cookieGroups) => {
         document.querySelector('body').classList.remove('with-cookie-bar');
