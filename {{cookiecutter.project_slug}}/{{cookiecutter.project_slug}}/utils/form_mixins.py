@@ -37,4 +37,3 @@ class FormSuccessMessageTaskResultMixin(FormSuccessMessageMixin):
 
     def get_success_message(self, cleaned_data, **kwargs):
         return self.success_message % dict(cleaned_data, **kwargs)
-

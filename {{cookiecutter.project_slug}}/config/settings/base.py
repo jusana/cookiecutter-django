@@ -397,8 +397,8 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 50
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 50,
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
@@ -588,7 +588,7 @@ CKEDITOR_5_CONFIGS = {
                 {"model": "heading1", "view": "h1", "title": "Heading 1", "class": "ck-heading_heading1"},
                 {"model": "heading2", "view": "h2", "title": "Heading 2", "class": "ck-heading_heading2"},
                 {"model": "heading3", "view": "h3", "title": "Heading 3", "class": "ck-heading_heading3"},
-            ]
+            ],
         },
         "language": "fr",
     },
@@ -597,7 +597,7 @@ CKEDITOR_5_CONFIGS = {
             "styles": "true",
             "startIndex": "true",
             "reversed": "true",
-        }
+        },
     },
 }
 

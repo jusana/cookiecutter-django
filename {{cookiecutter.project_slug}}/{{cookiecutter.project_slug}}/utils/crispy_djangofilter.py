@@ -52,8 +52,8 @@ class CrispyFilterSet(FilterSet):
             HTML('<div class="progress"><div class="indeterminate"></div></div>'),
             Div(
                 *fields,
-                css_class="d-flex flex-row justify-content-between align-items-center"
-            )
+                css_class="d-flex flex-row justify-content-between align-items-center",
+            ),
         )
 
         return helper

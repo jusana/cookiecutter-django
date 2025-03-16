@@ -66,7 +66,7 @@ django-tables2==2.7.5
 django-filter==25.1
 django-select2==8.3.0
 django-htmx==1.22.0
-# voir 
+# voir
 # django-htmx-autocomplete
 # django-siteajax
 # django-forms-dynamic
