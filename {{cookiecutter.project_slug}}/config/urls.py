@@ -29,7 +29,7 @@ urlpatterns = [
     path("mon-compte/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path("cookies/", include("cookie_consent.urls")),
-    path("ckeditor/", include("ckeditor_uploader.urls")),
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
     # ...
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
