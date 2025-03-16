@@ -1,5 +1,5 @@
 {% raw %}
-{% load static i18n cookie_consent_tags {% endraw %}
+{% load static i18n cookie_consent_tags django_htmx {% endraw %}
 
 {%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}compress{%- endif %}{% raw %}%}{% endraw %}
   {%- if cookiecutter.frontend_pipeline == 'Webpack' %}{% raw %}
@@ -66,7 +66,7 @@
       <!-- Bootstrap JS -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <!-- Your stuff: Third-party javascript libraries go here -->
-      <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+      {% htmx_script %}
       <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
       {% comment %}https://htmx.org/extensions/ajax-header/ --> pour déclencher le header X-Requested-With:XMLHttpRequest
       <script src="https://unpkg.com/htmx.org/dist/ext/ajax-header.js"></script> {% endcomment %}
