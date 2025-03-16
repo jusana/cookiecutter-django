@@ -59,14 +59,14 @@ pysolr==3.10.0
 # django-page-cms==2.0.11
 git+https://github.com/jusana/django-page-cms@master
 django-taggit==6.1.0
-django-ckeditor==6.7.2
 # django-ckeditor-5==0.2.17
+git+https://github.com/jusana/django-ckeditor-5@cookies-httponly
 django-simple-captcha==0.6.0
 django-tables2==2.7.5
 django-filter==25.1
 django-select2==8.3.0
 django-htmx==1.22.0
-# voir 
+# voir
 # django-htmx-autocomplete
 # django-siteajax
 # django-forms-dynamic

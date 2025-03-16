@@ -130,7 +130,7 @@ WEBPACK_LOADER["DEFAULT"]["CACHE"] = not DEBUG
 MIGRATION_MODULES = {
     "sites": "{{ cookiecutter.project_slug }}.contrib.sites.migrations",
     "pages": None,
-    }
+}
 
 # https://github.com/cookiecutter/cookiecutter-django/discussions/4185
 RUNSERVERPLUS_POLLER_RELOADER_TYPE = "stat"
