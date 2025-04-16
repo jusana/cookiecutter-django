@@ -202,6 +202,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Aidos Kanapyanov</td>
+    <td>
+      <a href="https://github.com/aidoskanapyanov">aidoskanapyanov</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Alan Cyment</td>
     <td>
       <a href="https://github.com/acyment">acyment</a>
@@ -1878,6 +1885,13 @@ Listed in alphabetical order.
     <td>Pedro Campos</td>
     <td>
       <a href="https://github.com/pcampos119104">pcampos119104</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Pepa</td>
+    <td>
+      <a href="https://github.com/07pepa">07pepa</a>
     </td>
     <td></td>
   </tr>
