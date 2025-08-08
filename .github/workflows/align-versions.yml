@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   run:
-    if: ${{ github.actor == 'pyup-bot' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.actor == 'pyup-bot' || github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     env:
       GH_PAT: ${{ secrets.GH_PAT }}
@@ -47,6 +47,6 @@ jobs:
 
       - run: uv run ${{ matrix.job.script }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: Align versions
