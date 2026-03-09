@@ -1,0 +1,16 @@
+{% raw %}{% load static cookie_consent_tags %}
+{% static "cookie_consent/cookiebar.module.js" as cookiebar_src %}
+<script type="module">
+    import {showCookieBar} from '{{ cookiebar_src }}';
+
+    showCookieBar({
+      statusUrl: '{{ status_url|escapejs }}',
+      onShow: () => document.querySelector('body').classList.add('with-cookie-bar'),
+      onAccept: (cookieGroups) => {
+        document.querySelector('body').classList.remove('with-cookie-bar');
+      },
+      onDecline: () => document.querySelector('body').classList.remove('with-cookie-bar'),
+    });
+
+</script>
+{% endraw %}
