@@ -1,0 +1,8 @@
+il faut générer un schema.xml à poser dans le dossier 'conf' pour prendre en compte le schema géré par haystack
+(via "$ python ./manage.py build_solr_schema --filename config/solr-configset/conf/schema.xml")
+--> voir https://django-haystack.readthedocs.io/en/v3.2.1/management_commands.html#build-solr-schema)
+le schema automatique de solr par défaut (managed-schema.xml) ne convient pas et doit être supprimé
+
+/!\ attention à bien remplacer le type 'date' par 'pdate' dans schema.xml généré
+
+==> une fois ceci fait on peut activer solr dans les fichiers docker-compose.yaml

@@ -28,8 +28,11 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("{{ cookiecutter.project_slug }}.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
+    path("mon-compte/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    # path("pages/", include("pages.urls")),
+    path("cookies/", include("cookie_consent.urls")),
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
     # ...
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),

@@ -37,7 +37,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential \
   # psycopg dependencies
-  libpq-dev
+  libpq-dev \
+  # git pour version gittée de django-cms
+  git
 
 
 # Requirements are installed here to ensure they will be cached.
@@ -119,6 +121,9 @@ RUN chown django:django ${APP_HOME}
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
+
+# volume pour media
+RUN mkdir ${APP_HOME}/mediafiles && chown django:django ${APP_HOME}/mediafiles
 
 USER django
 
