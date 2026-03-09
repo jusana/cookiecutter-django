@@ -1,0 +1,42 @@
+{% raw %}{% spaceless %}
+  {% if celery_task_result.status == "FAILURE" %}
+    <div class="container"  id="msg-framework" hx-swap-oob="true">
+      <div class="alert alert-dismissible alert-error">
+        {% block task_failure %}
+          <p>Erreur lors de l'exécution de la tâche</p>
+        {% endblock task_failure %}
+        <p>{{ celery_task_result.result }}</p>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"></button>
+      </div>
+    </div>
+  {% elif celery_task_result.status == "SUCCESS" %}
+    <div class="container"  id="msg-framework" hx-swap-oob="true">
+      <div class="alert alert-dismissible alert-success">
+        {% block task_success %}
+          Mon super resultat avec successsss !!! : {{ celery_task_result.result }}
+        {% endblock task_success %}
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"></button>
+      </div>
+    </div>
+  {% else %}
+    {% comment %} on continue le polling si tache non terminée succ ou fail {% endcomment %}
+    <div class="container"  id="msg-framework" hx-swap-oob="true">
+      <div class="alert alert-dismissible alert-warning">
+        <div hx-get="{% block polling_url %}{% url 'mon-url-name' celery_task_result.task_id %}{% endblock polling_url %}"
+             hx-trigger="load delay:1s"
+             hx-indicator="#spinner"
+             hx-swap="outerHTML">
+          Tâche <em>{{ celery_task_result.task_id }}</em> en cours ...
+        </div>
+        <span class="pacman-moving">{% include "htmx/waiting_spinner.html" %}</span>
+      </div>
+    </div>
+  {% endif %}
+{% endspaceless %}
+{% endraw %}

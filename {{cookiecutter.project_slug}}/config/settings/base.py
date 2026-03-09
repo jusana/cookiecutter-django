@@ -27,7 +27,7 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # In Windows, this must be set to your system time zone.
 TIME_ZONE = "{{ cookiecutter.timezone }}"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr-FR"
 # https://docs.djangoproject.com/en/dev/ref/settings/#languages
 # from django.utils.translation import gettext_lazy as _
 # LANGUAGES = [
@@ -41,6 +41,7 @@ SITE_ID = 1
 USE_I18N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
+# pê à mettre à False pour la compatibilité avec django-page-cms
 # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
 LOCALE_PATHS = [str(BASE_DIR / "locale")]
 
@@ -78,6 +79,8 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
+    "admin_interface",
+    "colorfield",
     "django.contrib.admin",
     "django.forms",
 ]
@@ -99,6 +102,20 @@ THIRD_PARTY_APPS = [
 {%- elif cookiecutter.rest_api == 'Django Ninja' %}
     "corsheaders",
 {%- endif %}
+    # consentement cookies
+    # on utilise une conf adhoc pour gérer l'histoire du BigAutoField pour django 3.2
+    # "cookie_consent",
+    "config.third_party_apps.CookieConsentConf",
+    "django_htmx",
+    # CMS
+    "mptt",
+    "taggit",
+    # attention il semble que le package manque des migrations
+    "pages",
+    # 'sorl.thumbnail',
+    "django_ckeditor_5",
+    "haystack",
+    "django_json_widget",
 {%- if cookiecutter.frontend_pipeline == 'Webpack' %}
     "webpack_loader",
 {%- endif %}
@@ -167,6 +184,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
 ]
@@ -215,7 +233,13 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
+                "pages.context_processors.media",
             ],
+            # permet d'ajouter des templatetags custom hors du dossier classique "templatetags"
+            # https://docs.djangoproject.com/fr/3.2/topics/templates/#module-django.template.backends.django
+            "libraries": {
+                "third_party_tags": "config.third_party_tags",
+            },
         },
     },
 ]
@@ -239,7 +263,8 @@ SESSION_COOKIE_HTTPONLY = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-httponly
 CSRF_COOKIE_HTTPONLY = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#x-frame-options
-X_FRAME_OPTIONS = "DENY"
+# X_FRAME_OPTIONS = "DENY"
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 # EMAIL
 # ------------------------------------------------------------------------------
@@ -373,6 +398,8 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 50,
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
@@ -403,3 +430,178 @@ WEBPACK_LOADER = {
 {%- endif %}
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+# This is defined here as a do-nothing function because we can't import
+# django.utils.translation -- that module depends on the settings.
+gettext_noop = lambda s: s  # noqa: E731
+
+PAGE_LANGUAGES = (
+    ("fr", gettext_noop("Français")),
+    ("en", gettext_noop("English")),
+    #    ('de', gettext_noop('Deutsch')),
+)
+
+LANGUAGE_CODE = "fr"
+PAGE_DEFAULT_LANGUAGE = "fr"
+LANGUAGES = list(PAGE_LANGUAGES)
+
+PAGE_DEFAULT_LANGUAGE = "fr"
+PAGE_USE_LANGUAGE_PREFIX = True
+PAGE_HIDE_ROOT_SLUG = True
+PAGE_TAGGING = True
+
+PAGE_DEFAULT_TEMPLATE = "pages/monobloc.html"
+PAGE_TEMPLATES = (
+    ("pages/monobloc.html", "Mono bloc"),
+    ("pages/categorie.html", "catégorie"),
+)
+
+CKEDITOR_UPLOAD_PATH = "pages-cms/"
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+
+COOKIE_CONSENT_NAME = "cookie_consent"
+COOKIE_CONSENT_MAX_AGE = 60 * 60 * 24 * 365 * 1  # 1 year
+
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+#     },
+# }
+
+# à activer une fois la conf solr générée
+# python ./manage.py build_solr_schema --filename config/solr-configset/conf/schema.xml
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.solr_backend.SolrEngine",
+        "URL": "http://solr:8983/solr/{{cookiecutter.project_slug}}-index",
+        "ADMIN_URL": "http://solr:8983/solr/admin/cores",
+        # ,'EXCLUDED_INDEXES': ['thirdpartyapp.search_indexes.BarIndex']
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"
+
+customColorPalette = [  # noqa: N816
+    {"color": "hsl(4, 90%, 58%)", "label": "Red"},
+    {"color": "hsl(340, 82%, 52%)", "label": "Pink"},
+    {"color": "hsl(291, 64%, 42%)", "label": "Purple"},
+    {"color": "hsl(262, 52%, 47%)", "label": "Deep Purple"},
+    {"color": "hsl(231, 48%, 48%)", "label": "Indigo"},
+    {"color": "hsl(207, 90%, 54%)", "label": "Blue"},
+]
+
+# CKEDITOR_5_CUSTOM_CSS = "path_to.css"  # optional
+# CKEDITOR_5_FILE_STORAGE = "path_to_storage.CustomStorage"  # optional
+CKEDITOR_5_CONFIGS = {
+    "default": {
+        "toolbar": {
+            "items": [
+                "heading",
+                "|",
+                "bold",
+                "italic",
+                "link",
+                "bulletedList",
+                "numberedList",
+                "blockQuote",
+                "imageUpload",
+            ],
+        },
+        "language": "fr",
+    },
+    "extends": {
+        "blockToolbar": [
+            "paragraph",
+            "heading1",
+            "heading2",
+            "heading3",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "|",
+            "blockQuote",
+        ],
+        "toolbar": {
+            "items": [
+                "heading",
+                "|",
+                "outdent",
+                "indent",
+                "|",
+                "bold",
+                "italic",
+                "link",
+                "underline",
+                "strikethrough",
+                "code",
+                "subscript",
+                "superscript",
+                "highlight",
+                "|",
+                "codeBlock",
+                "sourceEditing",
+                "insertImage",
+                "bulletedList",
+                "numberedList",
+                "todoList",
+                "|",
+                "blockQuote",
+                "imageUpload",
+                "|",
+                "fontSize",
+                "fontFamily",
+                "fontColor",
+                "fontBackgroundColor",
+                "mediaEmbed",
+                "removeFormat",
+                "insertTable",
+            ],
+            "shouldNotGroupWhenFull": True,
+        },
+        "image": {
+            "toolbar": [
+                "imageTextAlternative",
+                "|",
+                "imageStyle:alignLeft",
+                "imageStyle:alignRight",
+                "imageStyle:alignCenter",
+                "imageStyle:side",
+                "|",
+            ],
+            "styles": [
+                "full",
+                "side",
+                "alignLeft",
+                "alignRight",
+                "alignCenter",
+            ],
+        },
+        "table": {
+            "contentToolbar": ["tableColumn", "tableRow", "mergeTableCells", "tableProperties", "tableCellProperties"],
+            "tableProperties": {"borderColors": customColorPalette, "backgroundColors": customColorPalette},
+            "tableCellProperties": {"borderColors": customColorPalette, "backgroundColors": customColorPalette},
+        },
+        "heading": {
+            "options": [
+                {"model": "paragraph", "title": "Paragraph", "class": "ck-heading_paragraph"},
+                {"model": "heading1", "view": "h1", "title": "Heading 1", "class": "ck-heading_heading1"},
+                {"model": "heading2", "view": "h2", "title": "Heading 2", "class": "ck-heading_heading2"},
+                {"model": "heading3", "view": "h3", "title": "Heading 3", "class": "ck-heading_heading3"},
+            ],
+        },
+        "language": "fr",
+    },
+    "list": {
+        "properties": {
+            "styles": "true",
+            "startIndex": "true",
+            "reversed": "true",
+        },
+    },
+}
+
+# Define a constant in settings.py to specify file upload permissions
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"  # Possible values: "staff", "authenticated", "any"
+# CKEDITOR_UPLOAD_PATH = "pages-cms/"
