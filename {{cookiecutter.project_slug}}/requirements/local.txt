@@ -43,8 +43,8 @@ pytest-django==4.12.0  # https://github.com/pytest-dev/pytest-django
 
 # Bdd
 # ------------------------------------------------------------------------------
-django-harlequin==1.5.0
-harlequin[postgres]==2.0.5
+django-harlequin==1.7.0
+harlequin[postgres]==2.5.1
 
 
 # django-tailwind[reload]==3.8.0
