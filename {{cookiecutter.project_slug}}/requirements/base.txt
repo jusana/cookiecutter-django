@@ -54,22 +54,22 @@ django-cors-headers==4.9.0  # https://github.com/adamchainz/django-cors-headers
 django-webpack-loader==3.2.3  # https://github.com/django-webpack/django-webpack-loader
 {%- endif %}
 
-django-admin-interface==0.29.4
-django-json-widget==2.0.1
-django-cookie-consent==0.6.0
+django-admin-interface==0.32.0
+django-json-widget==2.1.1
+django-cookie-consent==1.0.0  # breaking changes vs 0.6.0 : URLs renommées, JS réécrit en module, migration DB
 django-haystack==3.3.0
-pysolr==3.10.0
+pysolr==3.11.0
 # TODO mettre la version forkée github
 # django-page-cms==2.0.11
 git+https://github.com/jusana/django-page-cms@master
 django-taggit==6.1.0
 # django-ckeditor-5==0.2.17
 git+https://github.com/jusana/django-ckeditor-5@cookies-httponly
-django-simple-captcha==0.6.2
-django-tables2==2.7.5
-django-filter==25.1
-django-select2==8.4.0
-django-htmx==1.23.0
+django-simple-captcha==0.6.3
+django-tables2==2.8.0
+django-filter==25.2
+django-select2==8.4.8
+django-htmx==1.27.0
 # voir
 # django-htmx-autocomplete
 # django-siteajax
