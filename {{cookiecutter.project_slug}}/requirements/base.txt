@@ -61,10 +61,10 @@ django-haystack==3.3.0
 pysolr==3.11.0
 # TODO mettre la version forkée github
 # django-page-cms==2.0.11
-git+https://github.com/jusana/django-page-cms@master
+#git+https://github.com/jusana/django-page-cms@master
 django-taggit==6.1.0
 # django-ckeditor-5==0.2.17
-git+https://github.com/jusana/django-ckeditor-5@cookies-httponly
+#git+https://github.com/jusana/django-ckeditor-5@cookies-httponly
 django-simple-captcha==0.6.3
 django-tables2==2.8.0
 django-filter==25.2
