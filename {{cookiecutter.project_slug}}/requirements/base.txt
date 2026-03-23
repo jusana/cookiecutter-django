@@ -54,7 +54,7 @@ django-haystack==3.3.0
 pysolr==3.11.0
 # TODO mettre la version forkée github
 # django-page-cms==2.0.11
-#git+https://github.com/jusana/django-page-cms@master
+git+https://github.com/jusana/django-page-cms@django_52_candidate
 django-taggit==6.1.0
 # django-ckeditor-5==0.2.17
 #git+https://github.com/jusana/django-ckeditor-5@cookies-httponly
@@ -68,7 +68,7 @@ django-htmx==1.27.0
 # django-siteajax
 # django-forms-dynamic
 # https://www.bugbytes.io/posts/django-and-htmx-chained-dropdown/
-django-bootstrap5==25.1
+django-bootstrap5==26.2
 # django-tailwind==3.8.0
 # django-tailwind-4==0.1.4
 # crispy-tailwind==1.0.3
