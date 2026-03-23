@@ -14,10 +14,17 @@ git checkout main
 git merge --ff-only upstream/main
 git push origin main
 
-echo "==> Rebase $CUSTOM_BRANCH sur main..."
+echo "==> Tag cruft-base avant rebase (préserve le commit pour cruft update)..."
 git checkout "$CUSTOM_BRANCH"
+CRUFT_TAG="cruft-base-$(date +%Y-%m-%d)"
+git tag "$CRUFT_TAG"
+git push origin "$CRUFT_TAG"
+
+echo "==> Rebase $CUSTOM_BRANCH sur main..."
 git rebase main
 
 echo ""
 echo "Rebase OK. Vérifie les conflits éventuels, puis :"
 echo "  git push --force-with-lease origin $CUSTOM_BRANCH"
+echo ""
+echo "Tag $CRUFT_TAG poussé — les projets existants peuvent toujours faire cruft update."
