@@ -1,7 +1,6 @@
 volumes:
   {{ cookiecutter.project_slug }}_local_postgres_data: {}
   {{ cookiecutter.project_slug }}_local_postgres_data_backups: {}
-  {{ cookiecutter.project_slug }}_local_solr-core-config: {}
   {% if cookiecutter.use_celery == 'y' %}{{ cookiecutter.project_slug }}_local_redis_data: {}{% endif %}
 
 services:
@@ -22,7 +21,6 @@ services:
     volumes:
       - /app/.venv
       - .:/app:z
-      - {{ cookiecutter.project_slug }}_local_solr-core-config:/app/config/solr-configset
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
@@ -58,7 +56,7 @@ services:
   #   #   SOLR_JAVA_MEM: "-Xms4g -Xmx4g"
   #   #   SOLR_OPTS: "-XX:-UseLargePages"
   #   volumes:
-  #     - {{ cookiecutter.project_slug }}_local_solr-core-config:/opt/solr/server/solr/configsets/solr-configset:ro
+  #     - ./config/solr-configset:/opt/solr/server/solr/configsets/solr-configset:ro
   #   command:
   #     - solr-precreate
   #     - {{ cookiecutter.project_slug }}-index

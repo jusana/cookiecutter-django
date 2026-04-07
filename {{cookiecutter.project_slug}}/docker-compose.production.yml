@@ -5,7 +5,8 @@ volumes:
   {%- if cookiecutter.cloud_provider == 'None' %}
   production_django_media: {}
   {%- endif %}
-  {{ cookiecutter.project_slug }}_production_solr-core-config: {}
+  production_solr-core-config:
+    external: true
   {% if cookiecutter.use_celery == 'y' %}
   production_redis_data: {}
   {% endif %}
