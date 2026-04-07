@@ -1,16 +1,60 @@
 {% raw %}{% load static cookie_consent_tags %}
+
 {% static "cookie_consent/cookiebar.module.js" as cookiebar_src %}
+{% url "cookie_consent_cookie_group_list" as url_cookies %}
+{% url 'cookie_consent_status' as status_url %}
+{% all_cookie_groups 'cookie-consent__cookie-groups' %}
+{# Emits a <script type="application/json" id="cookie-consent__cookie-groups">
+   ...
+ </script> tag #}
+<template id="cookie-consent__cookie-bar">
+  <div class="cookie-bar">
+    <p>
+      We use cookies to improve your browsing experience. By continuing to use
+      our site, you agree to our use of cookies.
+    </p>
+    <a href="#" class="cc-cookie-accept">Accept
+    </button>
+    <a href="#" class="cc-cookie-decline">Decline
+    </button>
+  </div>
+</template>
+<template data-varname="analytics">
+  <script>
+    console.log('Analytics script activated.');
+  </script>
+</template>
 <script type="module">
-    import {showCookieBar} from '{{ cookiebar_src }}';
+  import {
+    showCookieBar
+  } from '{{ cookiebar_src }}';
+  showCookieBar({
+    statusUrl: '{{ status_url|escapejs }}',
+    templateSelector: '#cookie-consent__cookie-bar',
+    cookieGroupsSelector: '#cookie-consent__cookie-groups',
+    acceptSelector: '.cc-cookie-accept',
+    declineSelector: '.cc-cookie-decline',
+    onAccept: (acceptedGroups) => {
+      document.querySelector('.cookie-bar').style.display = 'none';
+      document.querySelector('body').classList.remove('with-cookie-bar');
 
-    showCookieBar({
-      statusUrl: '{{ status_url|escapejs }}',
-      onShow: () => document.querySelector('body').classList.add('with-cookie-bar'),
-      onAccept: (cookieGroups) => {
-        document.querySelector('body').classList.remove('with-cookie-bar');
-      },
-      onDecline: () => document.querySelector('body').classList.remove('with-cookie-bar'),
-    });
+      acceptedGroups
+        .filter(group => ['analytics'].includes(group.varname))
+        .forEach(group => {
+          const scriptTemplate = document.querySelector(
+            `template[data-varname="${group.varname}"]`
+          ).content;
+          const scripts = templateNode.content.cloneNode(true);
+          document.body.appendChild(scripts);
+        });
+    },
+    onDecline: (declinedGroups) => {
+      document.querySelector('.cookie-bar').style.display = 'none';
+      document.querySelector('body').classList.remove('with-cookie-bar');
 
+      console.log('User is about to decline cookies', declinedGroups);
+    },
+  });
 </script>
+
 {% endraw %}

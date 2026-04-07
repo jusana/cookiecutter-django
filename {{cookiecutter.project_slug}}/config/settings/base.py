@@ -464,6 +464,19 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 COOKIE_CONSENT_NAME = "cookie_consent"
 COOKIE_CONSENT_MAX_AGE = 60 * 60 * 24 * 365 * 1  # 1 year
 
+# captcha
+CAPTCHA_LENGTH = 5
+CAPTCHA_NOISE_FUNCTIONS = (
+    "captcha.helpers.noise_null",
+    "captcha.helpers.noise_arcs",
+    "captcha.helpers.noise_dots",
+)
+CAPTCHA_CHALLENGE_FUNCT = "captcha.helpers.math_challenge"
+CAPTCHA_TIMEOUT = 15
+CAPTCHA_ANIMATED = True
+CAPTCHA_BACKGROUND_COLOR = "#AAAAAA"
+CAPTCHA_FOREGROUND_COLOR = "#218F21"
+
 # HAYSTACK_CONNECTIONS = {
 #     'default': {
 #         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',

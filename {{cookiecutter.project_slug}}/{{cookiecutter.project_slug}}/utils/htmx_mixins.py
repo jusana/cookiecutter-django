@@ -35,6 +35,24 @@ class HtmxPartialTemplateMixin:
             else {"base_extends": self.base_template}
         )  # noqa
 
+class PartialTemplateMixin:
+    """Alternative plus simple que HtmxPartialTemplateMixin s'appuyant sur "partialdef" de django 6
+    Mixin pour retourner une partial template ciblant un fragment HTML spécifique (ex: photo_list.html#photo-cards)
+    en cas de requête HTMX, et le template complet sinon.
+    On peut ensuite faire hériter nos vues de ce mixin et définir la variable "partial_name"
+    pour indiquer le fragment ciblé.
+    """
+
+    partial_name = None
+
+    def get_template_names(self):
+        template = super().get_template_names()[0]
+
+        if self.request.htmx and self.partial_name:
+            return [f"{template}#{self.partial_name}"]
+
+        return [template]
+
 
 class HtmxFormSuccessMessageMixin(FormSuccessMessageMixin):
     """
