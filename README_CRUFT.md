@@ -77,7 +77,7 @@ Les ~50 autres fichiers modifiés sont des ajouts purs (nouveaux fichiers) — j
 Dans le repo du projet Django :
 
 ```bash
-cruft update
+cruft update --checkout custom_a_utiliser_pour_projets
 # résoudre les éventuels conflits
 git add . && git commit -m "chore: update from cookiecutter"
 ```
@@ -95,7 +95,7 @@ git add ... && git commit -m "feat: ma nouvelle perso"
 git push origin custom_a_utiliser_pour_projets
 ```
 
-Puis mettre à jour les projets existants avec `cruft update`.
+Puis mettre à jour les projets existants avec `/home/dev-user/.cache/pre-commit/pre-commit.log`.
 
 ---
 
